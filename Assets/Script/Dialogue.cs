@@ -11,4 +11,11 @@ public class Dialogue {
 	public string[] sentences;
     public string Hello = "Hello World";
 
+
+
+    int a = 1;
+    int b = 1;
+
+
+
 }
