@@ -11,4 +11,8 @@ public class Dialogue {
 	public string[] sentences;
     public string Hello = "Hello World";
 
+
+
+
+
 }
