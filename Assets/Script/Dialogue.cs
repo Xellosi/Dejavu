@@ -13,12 +13,10 @@ public class Dialogue {
 
 
 
-<<<<<<< HEAD
-=======
+
     int a = 1;
     int b = 1;
 
->>>>>>> c2266edce0f7193ee83e01a44873f3aabe66f3ea
 
 
 }
