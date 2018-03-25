@@ -14,23 +14,31 @@ public class DialogueManager : MonoBehaviour
 	public const string SavePath = "Resources/Drama/";
 	public const string fileExtension = ".txt";
 
-	public GameObject Dialogbox;
-	public Queue<Dialogue> _Dialogue;
-	private Queue<string> sentences;
+	private GameObject Dialogbox;
+	private GameObject ContinueButton;
+	private Queue<Dialogue> _Dialogue= new Queue<Dialogue>();
+	private Image char1,char2,char3;
+	private Dictionary<string,Sprite> imagepool=new Dictionary<string,Sprite>();
+
 
 	// Use this for initialization
 	void Start ()
 	{
-		sentences = new Queue<string> ();
-		_Dialogue = new Queue<Dialogue>();
 		Dialogbox = GameObject.Find ("DialogueBox");
-		Dialogbox.SetActive(false);
+		char1=GameObject.Find("char1").GetComponent<Image>();
+		char2=GameObject.Find("char2").GetComponent<Image>();
+		char3=GameObject.Find("char3").GetComponent<Image>();
+		ContinueButton=GameObject.Find("ContinueButton");
+		EndDialogue();
 	}
 
 	public void StartDialogue (string dialoguename)
 	{
 		_Dialogue.Clear();
 		Dialogbox.SetActive(true);
+		char1.transform.gameObject.SetActive(true);
+		char2.transform.gameObject.SetActive(true);
+		char3.transform.gameObject.SetActive(true);
 		string line;
 		string fileFullPath = Path.Combine (Application.dataPath, SavePath);
 		fileFullPath = Path.Combine (fileFullPath, dialoguename + fileExtension);
@@ -53,6 +61,7 @@ public class DialogueManager : MonoBehaviour
 			}
 		}
 		file.Close ();
+		ContinueButton.GetComponentInChildren<Text>().text="Continue>>";
 		DisplayNextSentence();
 	}
 
@@ -62,10 +71,15 @@ public class DialogueManager : MonoBehaviour
 			EndDialogue ();
 			return;
 		}
+		else if (_Dialogue.Count==1){
+			ContinueButton.GetComponentInChildren<Text>().text="End>>";
+		}
 		Dialogue currentDialogue=_Dialogue.Dequeue();
 		nameText.text=currentDialogue.name;
 		string sentence = currentDialogue.sentence;
+		Setimage(currentDialogue);
 		StopAllCoroutines ();
+		ContinueButton.SetActive(false);
 		StartCoroutine (TypeSentence (sentence));
 	}
 
@@ -76,11 +90,62 @@ public class DialogueManager : MonoBehaviour
 			dialogueText.text += letter;
 			yield return null;
 		}
+		ContinueButton.SetActive(true);
+	}
+
+	//To Do 與上一對話的比較更變
+	void Setimage(Dialogue currentDialogue){
+		if(currentDialogue.picture1!=null){
+			if(!imagepool.ContainsKey(currentDialogue.picture1)){
+				imagepool[currentDialogue.picture1]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture1));
+			}
+			char1.sprite=imagepool[currentDialogue.picture1];
+			if(currentDialogue.effect1!=null){
+				if(currentDialogue.effect1=="暗"){
+					char1.color=Color.gray;
+				}
+				else if(currentDialogue.effect1=="震"){
+					char1.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,30),randomness:0);
+				}
+			}
+		}
+		if(currentDialogue.picture2!=null){
+			if(!imagepool.ContainsKey(currentDialogue.picture2)){
+				imagepool[currentDialogue.picture2]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture2));
+			}
+			char2.sprite=imagepool[currentDialogue.picture2];
+			if(currentDialogue.effect2!=null){
+				if(currentDialogue.effect2=="暗"){
+					char2.color=Color.gray;
+				}
+				else if(currentDialogue.effect2=="震"){
+					char2.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,30),randomness:0);
+				}
+			}
+		}
+		if(currentDialogue.picture3!=null){
+			if(!imagepool.ContainsKey(currentDialogue.picture3)){
+				imagepool[currentDialogue.picture3]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture3));
+			}
+			char3.sprite=imagepool[currentDialogue.picture3];
+			if(currentDialogue.effect3!=null){
+				if(currentDialogue.effect3=="暗"){
+					char3.color=Color.gray;
+				}
+				else if(currentDialogue.effect3=="震"){
+					char3.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,30),randomness:0);
+				}
+			}
+		}
+		//震動 陰影(對話角色圖片設亮  其它設暗)
 	}
 
 	void EndDialogue ()
 	{
 		Dialogbox.SetActive(false);
+		char1.transform.gameObject.SetActive(false);
+		char2.transform.gameObject.SetActive(false);
+		char3.transform.gameObject.SetActive(false);
 	}
 
 	void SetTestDialog(){
@@ -93,6 +158,7 @@ public class DialogueManager : MonoBehaviour
 			for (int i=0 ; i<5 ;i++){
 			temp.name="我是第"+Convert.ToString(i)+"人";
 			temp.sentence="我是第"+Convert.ToString(i)+"句";
+			temp.picture1="papa";
 			file.WriteLine(JsonUtility.ToJson(temp));
 			}
 		}
