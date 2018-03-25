@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.IO;
-
+using DG.Tweening;
 public class DialogueManager : MonoBehaviour
 {
 
@@ -13,64 +13,58 @@ public class DialogueManager : MonoBehaviour
 
 	public const string SavePath = "Resources/Drama/";
 	public const string fileExtension = ".txt";
-	public List<string> dramaame;
 
-	public Animator animator;
 	public GameObject Dialogbox;
-	public Dialogue _Dialogue;
+	public Queue<Dialogue> _Dialogue;
 	private Queue<string> sentences;
 
 	// Use this for initialization
 	void Start ()
 	{
 		sentences = new Queue<string> ();
+		_Dialogue = new Queue<Dialogue>();
 		Dialogbox = GameObject.Find ("DialogueBox");
+		Dialogbox.SetActive(false);
 	}
 
 	public void StartDialogue (string dialoguename)
 	{
-		/*animator.SetBool("IsOpen", true);
-
-		nameText.text = dialogue.name;
-
-		sentences.Clear();
-
-		foreach (string sentence in dialogue.sentences)
-		{
-			sentences.Enqueue(sentence);
-		}
-
-		DisplayNextSentence();*/
+		_Dialogue.Clear();
+		Dialogbox.SetActive(true);
 		string line;
 		string fileFullPath = Path.Combine (Application.dataPath, SavePath);
 		fileFullPath = Path.Combine (fileFullPath, dialoguename + fileExtension);
-		if (Directory.Exists (fileFullPath)) {
+		if ((Directory.Exists (fileFullPath))) {
 			Debug.Log ("無此對話");
 			return;
 		}
 		System.IO.StreamReader file = new System.IO.StreamReader (fileFullPath);
-		while ((line = file.ReadLine ()) != null) {
-			if (line [0] == '#') {
+		while((line = file.ReadLine())!=null){
+			Debug.Log(line);
+		if (line [0] == '#') {
 				continue;
 			}
-			try{
-			_Dialogue = JsonUtility.FromJson<Dialogue> (line);
+		try{
+			_Dialogue.Enqueue(JsonUtility.FromJson<Dialogue>(line));
 			}
 			catch(Exception e){
-				Debug.Log ("格式錯誤");
+				Debug.Log (e.Message);
+				return;
 			}
 		}
 		file.Close ();
+		DisplayNextSentence();
 	}
 
 	public void DisplayNextSentence ()
 	{
-		if (sentences.Count == 0) {
+		if (_Dialogue.Count==0) {
 			EndDialogue ();
 			return;
 		}
-
-		string sentence = sentences.Dequeue ();
+		Dialogue currentDialogue=_Dialogue.Dequeue();
+		nameText.text=currentDialogue.name;
+		string sentence = currentDialogue.sentence;
 		StopAllCoroutines ();
 		StartCoroutine (TypeSentence (sentence));
 	}
@@ -86,10 +80,21 @@ public class DialogueManager : MonoBehaviour
 
 	void EndDialogue ()
 	{
-		animator.SetBool ("IsOpen", false);
+		Dialogbox.SetActive(false);
 	}
 
-
-
-
+	void SetTestDialog(){
+		string fullpath=Path.Combine(Application.dataPath,SavePath);
+		fullpath=Path.Combine(fullpath,"test"+fileExtension);
+		Dialogue temp = new Dialogue();
+		using (System.IO.StreamWriter file = 
+            new System.IO.StreamWriter(fullpath))
+		{
+			for (int i=0 ; i<5 ;i++){
+			temp.name="我是第"+Convert.ToString(i)+"人";
+			temp.sentence="我是第"+Convert.ToString(i)+"句";
+			file.WriteLine(JsonUtility.ToJson(temp));
+			}
+		}
+	}
 }

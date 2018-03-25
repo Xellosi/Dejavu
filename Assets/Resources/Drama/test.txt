@@ -1,0 +1,6 @@
+#註解行用#字開頭 換行(enter)即為下一片段 {}內太長也別使用enter換行輸入
+{"name":"我是第0人","sentence":"我是第0句","picture1":"","picture2":"","picture3":"","effect1":"","effect2":"","effect3":""}
+{"name":"我是第1人","sentence":"我是第1句","picture1":"","picture2":"","picture3":"","effect1":"","effect2":"","effect3":""}
+{"name":"我是第2人","sentence":"我是第2句","picture1":"","picture2":"","picture3":"","effect1":"","effect2":"","effect3":""}
+{"name":"我是第3人","sentence":"我是第3句","picture1":"","picture2":"","picture3":"","effect1":"","effect2":"","effect3":""}
+{"name":"我是第4人","sentence":"我是第4句","picture1":"","picture2":"","picture3":"","effect1":"","effect2":"","effect3":""}

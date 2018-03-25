@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogueTrigger : MonoBehaviour {
 
-	public string dialoguename;
+	string dialoguename;
 
 	public void TriggerDialogue ()
 	{
