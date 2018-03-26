@@ -1,8 +1,8 @@
 #作註解以#號為開頭 每一組大括號為一組對話 用換行作隔開　每個屬性欄位用""夾住 name為對話人物名 sentence為句子
 #picture1~3為圖片名字 1:左 2:右 3:中間
-#effect1~3為效果名稱 目前有 "震":震動1秒 ,"暗":變黑暗(與明亮) enter僅可於下括弧後使用(勿於括弧中加入換行)
-{"name":"我是第0人","sentence":"我是第0句","picture1":"papa","picture2":"","picture3":"","effect1":"","effect2":"","effect3":""}
+#effect1~3為效果名稱 目前有 "震":震動1秒 ,"暗":變黑暗(無填為亮) enter僅可於下括弧後使用(勿於括弧中加入換行)
+{"name":"我是第0人","sentence":"我是第0句","picture1":"papa","picture2":"","picture3":"daughter","effect1":"暗","effect2":"","effect3":"暗"}
 {"name":"我是第1人","sentence":"我是第1句..............","picture1":"papa","picture2":"","picture3":"daughter","effect1":"","effect2":"","effect3":""}
-{"name":"我是第2人","sentence":"我是第2句++++++++++++++++","picture1":"papa","picture2":"mama","picture3":"daughter","effect1":"","effect2":"震","effect3":""}
+{"name":"我是第2人","sentence":"我是第2句++++++++++++++++","picture1":"papa","picture2":"mama","picture3":"daughter","effect1":"","effect2":"震","effect3":"震"}
 {"name":"我是第3人","sentence":"我是第3句zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz","picture1":"papa","picture2":"","picture3":"daughter","effect1":"","effect2":"","effect3":""}
-{"name":"我是第4人","sentence":"我是第4句aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","picture1":"papa","picture2":"mama","picture3":"","effect1":"","effect2":"暗","effect3":""}
+{"name":"我是第4人","sentence":"我是第4句aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","picture1":"papa","picture2":"mama","picture3":"","effect1":"","effect2":"暗","effect3":"暗"}

@@ -48,7 +48,6 @@ public class DialogueManager : MonoBehaviour
 		}
 		System.IO.StreamReader file = new System.IO.StreamReader (fileFullPath);
 		while((line = file.ReadLine())!=null){
-			Debug.Log(line);
 		if (line [0] == '#') {
 				continue;
 			}
@@ -95,12 +94,12 @@ public class DialogueManager : MonoBehaviour
 
 	//To Do 與上一對話的比較更變
 	void Setimage(Dialogue currentDialogue){
-		if(currentDialogue.picture1!=null){
+		if(currentDialogue.picture1!=""){
 			if(!imagepool.ContainsKey(currentDialogue.picture1)){
 				imagepool[currentDialogue.picture1]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture1));
 			}
 			char1.sprite=imagepool[currentDialogue.picture1];
-			if(currentDialogue.effect1!=null){
+			if(currentDialogue.effect1!=""){
 				if(currentDialogue.effect1=="暗"){
 					char1.color=Color.gray;
 				}
@@ -108,13 +107,19 @@ public class DialogueManager : MonoBehaviour
 					char1.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,30),randomness:0);
 				}
 			}
+			else{
+				char1.color=Color.white;
+			}
 		}
-		if(currentDialogue.picture2!=null){
+		else{
+			char1.color=Color.clear;
+		}
+		if(currentDialogue.picture2!=""){
 			if(!imagepool.ContainsKey(currentDialogue.picture2)){
 				imagepool[currentDialogue.picture2]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture2));
 			}
 			char2.sprite=imagepool[currentDialogue.picture2];
-			if(currentDialogue.effect2!=null){
+			if(currentDialogue.effect2!=""){
 				if(currentDialogue.effect2=="暗"){
 					char2.color=Color.gray;
 				}
@@ -122,13 +127,19 @@ public class DialogueManager : MonoBehaviour
 					char2.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,30),randomness:0);
 				}
 			}
+			else{
+				char2.color=Color.white;
+			}
 		}
-		if(currentDialogue.picture3!=null){
+		else{
+			char2.color=Color.clear;
+		}
+		if(currentDialogue.picture3!=""){
 			if(!imagepool.ContainsKey(currentDialogue.picture3)){
 				imagepool[currentDialogue.picture3]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture3));
 			}
 			char3.sprite=imagepool[currentDialogue.picture3];
-			if(currentDialogue.effect3!=null){
+			if(currentDialogue.effect3!=""){
 				if(currentDialogue.effect3=="暗"){
 					char3.color=Color.gray;
 				}
@@ -136,6 +147,12 @@ public class DialogueManager : MonoBehaviour
 					char3.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,30),randomness:0);
 				}
 			}
+			else{
+				char3.color=Color.white;
+			}
+		}
+		else{
+			char3.color=Color.clear;
 		}
 		//震動 陰影(對話角色圖片設亮  其它設暗)
 	}
