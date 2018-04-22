@@ -4,19 +4,12 @@ using UnityEngine;
 
 [System.Serializable]
 public class Dialogue {
-
-	public string name;
-
-	[TextArea(3, 10)]
-	public string[] sentences;
-    public string Hello = "Hello World";
-
-
-
-
-    int a = 1;
-    int b = 1;
-
-
-
+    public string name;
+    public string sentence;
+    public string picture1;
+    public string picture2;
+    public string picture3;
+    public string effect1;
+    public string effect2;
+    public string effect3;
 }
