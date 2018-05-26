@@ -8,88 +8,90 @@ using DG.Tweening;
 public class DialogueManager : MonoBehaviour
 {
 
-	public Text nameText;
-	public Text dialogueText;
+    public Text nameText;
+    public Text dialogueText;
 
-	public const string SavePath = "Resources/Drama/";
-	public const string fileExtension = ".txt";
+    public const string SavePath = "Resources/Drama/";
+    public const string fileExtension = ".txt";
 
-	private GameObject Dialogbox;
-	private GameObject ContinueButton;
-	private Queue<Dialogue> _Dialogue= new Queue<Dialogue>();
-	private Image char1,char2,char3;
-	private Dictionary<string,Sprite> imagepool=new Dictionary<string,Sprite>();
+    private GameObject Dialogbox;
+    private GameObject ContinueButton;
+    private Queue<Dialogue> _Dialogue = new Queue<Dialogue>();
+    private Image char1, char2, char3;
+    private Dictionary<string, Sprite> imagepool = new Dictionary<string, Sprite>();
 
 
-	// Use this for initialization
-	void Start ()
-	{
-		Dialogbox = GameObject.Find ("DialogueBox");
-		char1=GameObject.Find("char1").GetComponent<Image>();
-		char2=GameObject.Find("char2").GetComponent<Image>();
-		char3=GameObject.Find("char3").GetComponent<Image>();
-		ContinueButton=GameObject.Find("ContinueButton");
-		EndDialogue();
-	}
+    // Use this for initialization
+    void Start()
+    {
+        Dialogbox = GameObject.Find("DialogueBox");
+        char1 = GameObject.Find("char1").GetComponent<Image>();
+        char2 = GameObject.Find("char2").GetComponent<Image>();
+        char3 = GameObject.Find("char3").GetComponent<Image>();
+        ContinueButton = GameObject.Find("ContinueButton");
+        EndDialogue();
+    }
 
-	public void StartDialogue (string dialoguename)
-	{
-		_Dialogue.Clear();
-		Dialogbox.SetActive(true);
-		char1.transform.gameObject.SetActive(true);
-		char2.transform.gameObject.SetActive(true);
-		char3.transform.gameObject.SetActive(true);
-		string line;
-		string fileFullPath = Path.Combine (Application.dataPath, SavePath);
-		fileFullPath = Path.Combine (fileFullPath, dialoguename + fileExtension);
-		if ((Directory.Exists (fileFullPath))) {
-			Debug.Log ("無此對話");
-			return;
-		}
-		System.IO.StreamReader file = new System.IO.StreamReader (fileFullPath);
-		while((line = file.ReadLine())!=null){
-		if (line [0] == '#') {
-				continue;
-			}
-		try{
-			_Dialogue.Enqueue(JsonUtility.FromJson<Dialogue>(line));
-			}
-			catch(Exception e){
-				Debug.Log (e.Message);
-				return;
-			}
-		}
-		file.Close ();
-		ContinueButton.GetComponentInChildren<Text>().text="Continue>>";
-		DisplayNextSentence();
-	}
+    public void StartDialogue(string dialoguename)
+    {
+        _Dialogue.Clear();
+        Dialogbox.SetActive(true);
+        char1.transform.gameObject.SetActive(true);
+        char2.transform.gameObject.SetActive(true);
+        char3.transform.gameObject.SetActive(true);
+        string line;
+        string fileFullPath = Path.Combine(Application.dataPath, SavePath);
+        fileFullPath = Path.Combine(fileFullPath, dialoguename + fileExtension);
+        if ((Directory.Exists(fileFullPath))) {
+            Debug.Log("無此對話");
+            return;
+        }
+        System.IO.StreamReader file = new System.IO.StreamReader(fileFullPath);
+        while ((line = file.ReadLine()) != null) {
+            if (line[0] == '#') {
+                continue;
+            }
+            try {
+                _Dialogue.Enqueue(JsonUtility.FromJson<Dialogue>(line));
+            }
+            catch (Exception e) {
+                Debug.Log(e.Message);
+                return;
+            }
+        }
+        file.Close();
+        ContinueButton.GetComponentInChildren<Text>().text = "Continue>>";
+        DisplayNextSentence();
+    }
 
-	public void DisplayNextSentence ()
-	{
-		if (_Dialogue.Count==0) {
-			EndDialogue ();
-			return;
-		}
-		else if (_Dialogue.Count==1){
-			ContinueButton.GetComponentInChildren<Text>().text="End>>";
-		}
-		Dialogue currentDialogue=_Dialogue.Dequeue();
-		nameText.text=currentDialogue.name;
-		string sentence = currentDialogue.sentence;
-		Setimage(currentDialogue);
-		StopAllCoroutines ();
-		ContinueButton.SetActive(false);
-		StartCoroutine (TypeSentence (sentence));
-	}
+    public void DisplayNextSentence()
+    {
 
-	IEnumerator TypeSentence (string sentence)
-	{
-		dialogueText.text = "";
-		foreach (char letter in sentence.ToCharArray()) {
-			dialogueText.text += letter;
-			yield return null;
-		}
-		ContinueButton.SetActive(true);
+        if (_Dialogue.Count == 0) {
+            EndDialogue();
+            return;
+        }
+
+        else if (_Dialogue.Count == 1) {
+            ContinueButton.GetComponentInChildren<Text>().text = "End>>";
+        }
+        Dialogue currentDialogue = _Dialogue.Dequeue();
+        nameText.text = currentDialogue.name;
+        string sentence = currentDialogue.sentence;
+        Setimage(currentDialogue);
+        StopAllCoroutines();
+        ContinueButton.SetActive(false);
+        StartCoroutine(TypeSentence(sentence));
+    }
+
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray()) {
+            dialogueText.text += letter;
+            yield return null;
+        }
+        ContinueButton.SetActive(true);
 	}
 
 	//To Do 與上一對話的比較更變
