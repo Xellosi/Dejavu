@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 
-    [SerializeField] GameObject grid = null;
-    [SerializeField] GameObject initCanvas = null;
+    [SerializeField]public  GameObject grid = null;
+    [SerializeField]public GameObject initCanvas = null;
 
     // Use this for initialization
     void Start()

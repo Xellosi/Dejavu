@@ -68,7 +68,7 @@ public class DoSomeThing1 : MonoBehaviour {
         go1.name = ("Gloves");
         GameObject change_Image1 = GameObject.Find("Gloves");
         change_Image1.transform.localPosition = new Vector3(0, 0, 0);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(10);
         GameObject.Destroy(go1);
     }
     IEnumerator TimeDelayer_Computer()
@@ -82,4 +82,5 @@ public class DoSomeThing1 : MonoBehaviour {
         yield return new WaitForSeconds(5);
         GameObject.Destroy(go2);
     }
+
 }
