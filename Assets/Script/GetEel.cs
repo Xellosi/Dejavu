@@ -3,30 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GetEel : MonoBehaviour {
-    
+    public GameObject glove_position;
     // Use this for initialization
     void Start () {
-		
+		glove_position = GameObject.Find("GloveObj");
 	}
     int number = 1;
 	// Update is called once per frame
 	void Update () {
-        
-        GameObject glove_position = GameObject.Find("GloveObj");
-
-        
-        
         if (glove_position.transform.localPosition != new Vector3(116, -258, 0) )
             {
-            
             while (number < 2)
             {
                 StartCoroutine(TimeDelayer_Gloves());
                 number++;
             }
-
-
-            }
+        }
         
     }
     IEnumerator TimeDelayer_Gloves()
@@ -39,6 +31,5 @@ public class GetEel : MonoBehaviour {
         change_Image1.transform.localPosition = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(2);
         GameObject.Destroy(go1);
-        
     }
 }
