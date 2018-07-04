@@ -24,8 +24,10 @@ public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
     public void OnDrag(PointerEventData eventData)
     {
+        Vector3 screenPoint = Input.mousePosition;
+        screenPoint.z = 100.0f; //distance of the plane from the camera
         GetComponent<RectTransform>().pivot.Set(0, 0);
-        transform.position = Input.mousePosition;
+        transform.position = Camera.main.ScreenToWorldPoint(screenPoint);
     }
 
     public void OnPointerDown(PointerEventData eventData)
