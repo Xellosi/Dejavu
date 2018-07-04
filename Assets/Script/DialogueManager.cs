@@ -7,33 +7,41 @@ using System.IO;
 using DG.Tweening;
 public class DialogueManager : MonoBehaviour
 {
-
-    public Text nameText;
-    public Text dialogueText;
-
+	public static string PrefabPath = "Prefab/Dialogue_Canvas";
     public const string SavePath = "Resources/Drama/";
     public const string fileExtension = ".txt";
 
-    private GameObject Dialogbox;
-    private GameObject ContinueButton;
-    private Queue<Dialogue> _Dialogue = new Queue<Dialogue>();
-    private Image char1, char2, char3;
+	public Text nameText,dialogueText; //角色名稱Text, 對話Text
+    public GameObject Dialogbox,ContinueButton; //對話框, 繼續鍵
+    public Image char1, char2, char3; //角色圖
+
+
+
+	private Queue<Dialogue> _Dialogue = new Queue<Dialogue>();
     private Dictionary<string, Sprite> imagepool = new Dictionary<string, Sprite>();
+ 
+
+	private static DialogueManager _instance = null;
 
 
+
+	private DialogueManager () {}
     // Use this for initialization
-    void Start()
-    {
-        Dialogbox = GameObject.Find("DialogueBox");
-        char1 = GameObject.Find("char1").GetComponent<Image>();
-        char2 = GameObject.Find("char2").GetComponent<Image>();
-        char3 = GameObject.Find("char3").GetComponent<Image>();
-        ContinueButton = GameObject.Find("ContinueButton");
-        EndDialogue();
+    public static DialogueManager Instance{
+		get{
+			if (_instance == null){
+				GameObject manager = (GameObject)Instantiate(Resources.Load(PrefabPath));
+				_instance = manager.GetComponent<DialogueManager>();
+				_instance.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+				DontDestroyOnLoad(manager);
+			}
+			return _instance;
+		}
     }
-
+ 
     public void StartDialogue(string dialoguename)
     {
+		_instance.transform.gameObject.SetActive(true);
         _Dialogue.Clear();
         Dialogbox.SetActive(true);
         char1.transform.gameObject.SetActive(true);
@@ -161,10 +169,7 @@ public class DialogueManager : MonoBehaviour
 
 	void EndDialogue ()
 	{
-		Dialogbox.SetActive(false);
-		char1.transform.gameObject.SetActive(false);
-		char2.transform.gameObject.SetActive(false);
-		char3.transform.gameObject.SetActive(false);
+		this.transform.gameObject.SetActive(false);
 	}
 
 	void SetTestDialog(){

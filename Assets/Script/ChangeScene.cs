@@ -19,7 +19,6 @@ public class ChangeScene : MonoBehaviour {
     {
         string lastSceneName = SceneManager.GetActiveScene().name;
         LastSceneStack.Push(lastSceneName);
-        SceneManager.LoadScene(SceneName);
         SceneManager.LoadSceneAsync(SceneName);
         FadeController.Instance.FadeIn(1f);
     }

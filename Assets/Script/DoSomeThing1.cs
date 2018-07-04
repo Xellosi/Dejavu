@@ -5,7 +5,11 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DoSomeThing1 : MonoBehaviour {
-   
+
+    DialogueManager a;
+   void Start(){
+       DialogueManager.Instance.StartDialogue("test");
+   }
     [SerializeField] GameObject grid = null;
     public void ChangeImagePosition()
     {
