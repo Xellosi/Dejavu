@@ -7,8 +7,10 @@ using UnityEngine.EventSystems;
 public class DoSomeThing1 : MonoBehaviour {
 
     DialogueManager a;
+    InventoryManager b;
    void Start(){
-       DialogueManager.Instance.StartDialogue("test");
+       //DialogueManager.Instance.StartDialogue("test");
+       b=InventoryManager.Instance;
    }
     [SerializeField] GameObject grid = null;
     public void ChangeImagePosition()

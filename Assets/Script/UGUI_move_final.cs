@@ -7,13 +7,16 @@ using UnityEngine.EventSystems;
 public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 
-    [SerializeField]public  GameObject grid = null;
+    [SerializeField]public GameObject grid = null;
     [SerializeField]public GameObject initCanvas = null;
+
+
+    private bool collected=false;
 
     // Use this for initialization
     void Start()
     {
-
+        grid = InventoryManager.Instance.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -24,27 +27,33 @@ public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
     public void OnDrag(PointerEventData eventData)
     {
-        Vector3 screenPoint = Input.mousePosition;
-        screenPoint.z = 100.0f; //distance of the plane from the camera
-        GetComponent<RectTransform>().pivot.Set(0, 0);
-        transform.position = Camera.main.ScreenToWorldPoint(screenPoint);
+        Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        p.z=0;
+        transform.position=p;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
         transform.SetParent(initCanvas.transform, true);
         transform.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        transform.GetComponent<Image>().SetNativeSize();
+
+        if(collected == false){
+            collected=true;
+            transform.SetParent(grid.transform);
+            //call 對話欄顯示取得物品
+        }  
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        transform.localScale = new Vector3(1f, 1f, 1f);
         if (eventData.pointerCurrentRaycast.gameObject != null)
         {
-            if (eventData.pointerCurrentRaycast.gameObject.name == grid.name)
+            if (eventData.pointerCurrentRaycast.gameObject.name == initCanvas.name || eventData.pointerCurrentRaycast.gameObject.name == grid.name)
             {
+                transform.localScale = new Vector3(1f, 1f, 1f);
                 transform.SetParent(grid.transform);
+                transform.position = new Vector3(transform.position.x,transform.position.y,0f);
             }
         }
         transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
