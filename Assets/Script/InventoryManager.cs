@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class InventoryManager : MonoBehaviour {
 
 	public static string PrefabPath = "Prefab/InventoryCanvas";
@@ -21,4 +21,12 @@ public class InventoryManager : MonoBehaviour {
 		}
     }
 
+	void OnEnable(){
+                 SceneManager.sceneLoaded += rendercameraupdate;
+	}
+	void rendercameraupdate(Scene a , LoadSceneMode b){
+		if(_instance.GetComponent<Canvas>().worldCamera == null){
+			_instance.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+		}
+	}
 }
