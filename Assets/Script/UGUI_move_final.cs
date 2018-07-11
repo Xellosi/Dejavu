@@ -44,7 +44,6 @@ public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, 
     {
         transform.SetParent(transform.parent.parent, true);
         transform.GetComponent<CanvasGroup>().blocksRaycasts = false;
-        transform.localScale = new Vector3(1f,1f,1f);
         if(collected == false){
             collected=true;
             transform.SetParent(grid.transform,true);
@@ -59,9 +58,7 @@ public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, 
             Debug.Log(eventData.pointerCurrentRaycast.gameObject.name );
             if (eventData.pointerCurrentRaycast.gameObject.name == initCanvas.name || eventData.pointerCurrentRaycast.gameObject.name == grid.name)
             {
-                transform.localScale = new Vector3(1f, 1f, 1f);
                 transform.SetParent(grid.transform,true);
-                //transform.position = new Vector3(0.0f,0.0f,0f);
             }
         }
         transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
