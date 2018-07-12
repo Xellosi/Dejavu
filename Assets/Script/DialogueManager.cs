@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
 
 	public Text nameText,dialogueText; //角色名稱Text, 對話Text
     public GameObject Dialogbox,ContinueButton; //對話框, 繼續鍵
-    public Image char1, char2, char3; //角色圖
+    public Image char1, char2, char3, CG; //角色圖
 
 
 
@@ -44,9 +44,9 @@ public class DialogueManager : MonoBehaviour
 		_instance.transform.gameObject.SetActive(true);
         _Dialogue.Clear();
         Dialogbox.SetActive(true);
-        char1.transform.gameObject.SetActive(true);
-        char2.transform.gameObject.SetActive(true);
-        char3.transform.gameObject.SetActive(true);
+        //char1.transform.gameObject.SetActive(true);
+        //char2.transform.gameObject.SetActive(true);
+        //char3.transform.gameObject.SetActive(true);
         string line;
         string fileFullPath = Path.Combine(Application.dataPath, SavePath);
         fileFullPath = Path.Combine(fileFullPath, dialoguename + fileExtension);
@@ -86,7 +86,7 @@ public class DialogueManager : MonoBehaviour
         Dialogue currentDialogue = _Dialogue.Dequeue();
         nameText.text = currentDialogue.name;
         string sentence = currentDialogue.sentence;
-        Setimage(currentDialogue);
+        SetImage(currentDialogue);
         StopAllCoroutines();
         ContinueButton.SetActive(false);
         StartCoroutine(TypeSentence(sentence));
@@ -101,10 +101,11 @@ public class DialogueManager : MonoBehaviour
         }
         ContinueButton.SetActive(true);
 	}
-
-	//To Do 與上一對話的比較更變
-	void Setimage(Dialogue currentDialogue){
+		
+	void SetImage(Dialogue currentDialogue){
+		//角色1
 		if(currentDialogue.picture1!=""){
+			char1.transform.gameObject.SetActive(true);
 			if(!imagepool.ContainsKey(currentDialogue.picture1)){
 				imagepool[currentDialogue.picture1]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture1));
 			}
@@ -114,17 +115,18 @@ public class DialogueManager : MonoBehaviour
 					char1.color=Color.gray;
 				}
 				else if(currentDialogue.effect1=="震"){
-					char1.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,30),randomness:0);
+					char1.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,50),randomness:0);
 				}
 			}
 			else{
 				char1.color=Color.white;
 			}
+		}else{
+			char1.transform.gameObject.SetActive(false);
 		}
-		else{
-			char1.color=Color.clear;
-		}
+		//角色2
 		if(currentDialogue.picture2!=""){
+			char2.transform.gameObject.SetActive(true);
 			if(!imagepool.ContainsKey(currentDialogue.picture2)){
 				imagepool[currentDialogue.picture2]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture2));
 			}
@@ -134,7 +136,7 @@ public class DialogueManager : MonoBehaviour
 					char2.color=Color.gray;
 				}
 				else if(currentDialogue.effect2=="震"){
-					char2.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,30),randomness:0);
+					char2.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,50),randomness:0);
 				}
 			}
 			else{
@@ -142,9 +144,11 @@ public class DialogueManager : MonoBehaviour
 			}
 		}
 		else{
-			char2.color=Color.clear;
+			char2.transform.gameObject.SetActive(false);
 		}
+		//角色3
 		if(currentDialogue.picture3!=""){
+			char3.transform.gameObject.SetActive(true);
 			if(!imagepool.ContainsKey(currentDialogue.picture3)){
 				imagepool[currentDialogue.picture3]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture3));
 			}
@@ -162,9 +166,13 @@ public class DialogueManager : MonoBehaviour
 			}
 		}
 		else{
-			char3.color=Color.clear;
+			char3.transform.gameObject.SetActive(false);
 		}
-		//震動 陰影(對話角色圖片設亮  其它設暗)
+
+		//CG
+		if (currentDialogue.CG != "") {
+			char3.transform.gameObject.SetActive(true);
+		}
 	}
 
 	void EndDialogue ()
@@ -172,6 +180,7 @@ public class DialogueManager : MonoBehaviour
 		this.transform.gameObject.SetActive(false);
 	}
 
+	//生成測試用對話
 	void SetTestDialog(){
 		string fullpath=Path.Combine(Application.dataPath,SavePath);
 		fullpath=Path.Combine(fullpath,"test"+fileExtension);

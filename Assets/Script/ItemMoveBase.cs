@@ -4,23 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 
     [SerializeField]public GameObject grid = null;
     [SerializeField]public GameObject initCanvas = null;
-
+	private Image _image;
 
     private bool collected=false;
 
     void Start(){
         grid = InventoryManager.Instance.transform.GetChild(0).gameObject;
+		_image = GetComponent<Image> ();
     }
     void OnEnable(){
         SceneManager.sceneLoaded += checkinitC;
     }
-    // Use this for initialization
-    // Update is called once per frame
 
     void checkinitC(Scene a , LoadSceneMode b){
         if (initCanvas==null){
@@ -28,26 +27,24 @@ public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, 
         }
         //transform.position = new Vector3(transform.position.x,transform.position.y,0.0f);
     }
-    void Update()
-    {
-
-    }
 
     public void OnDrag(PointerEventData eventData)
     {
         Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         p.z=0f;
         transform.position=p;
+		if (eventData.pointerCurrentRaycast.gameObject.name == initCanvas.name) {
+			_image.SetNativeSize ();
+		}
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        transform.SetParent(transform.parent.parent, true);
+		transform.SetParent(InventoryManager.Instance.transform, true);
         transform.GetComponent<CanvasGroup>().blocksRaycasts = false;
         if(collected == false){
             collected=true;
             transform.SetParent(grid.transform,true);
-            //call 對話欄顯示取得物品
         }  
     }
 
@@ -55,7 +52,6 @@ public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, 
     {
         if (eventData.pointerCurrentRaycast.gameObject != null)
         {
-            Debug.Log(eventData.pointerCurrentRaycast.gameObject.name );
             if (eventData.pointerCurrentRaycast.gameObject.name == initCanvas.name || eventData.pointerCurrentRaycast.gameObject.name == grid.name)
             {
                 transform.SetParent(grid.transform,true);
@@ -63,6 +59,5 @@ public class UGUI_move_final :MonoBehaviour, IDragHandler, IPointerDownHandler, 
         }
         transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
-
 }
 

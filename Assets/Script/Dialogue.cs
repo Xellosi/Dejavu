@@ -12,4 +12,6 @@ public class Dialogue {
     public string effect1;
     public string effect2;
     public string effect3;
+	public string CG;
+	public string CG_effect;
 }
