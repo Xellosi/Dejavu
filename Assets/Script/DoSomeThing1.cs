@@ -10,7 +10,8 @@ public class DoSomeThing1 : MonoBehaviour {
     InventoryManager b;
    void Start(){
        //DialogueManager.Instance.StartDialogue("test");
-       b=InventoryManager.Instance;
+       //b=InventoryManager.Instance;
+		GetItemInfo.ShowGetInfo("glove");
    }
     [SerializeField] GameObject grid = null;
     public void ChangeImagePosition()

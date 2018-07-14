@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
 
 	public Text nameText,dialogueText; //角色名稱Text, 對話Text
     public GameObject Dialogbox,ContinueButton; //對話框, 繼續鍵
-    public Image char1, char2, char3, CG; //角色圖
+    public Image char1, char2, char3, CG;//角色圖
 
 
 

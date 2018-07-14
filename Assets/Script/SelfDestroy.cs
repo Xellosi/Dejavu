@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetInt : MonoBehaviour {
+public class SelfDestroy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,5 +12,9 @@ public class GetInt : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void Destory(){
+		Destroy (transform.root.gameObject);
 	}
 }
