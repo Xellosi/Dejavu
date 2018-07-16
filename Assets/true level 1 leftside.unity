@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -270,7 +270,6 @@ GameObject:
   - component: {fileID: 670502506}
   - component: {fileID: 670502505}
   - component: {fileID: 670502504}
-  - component: {fileID: 670502508}
   m_Layer: 5
   m_Name: left to right button
   m_TagString: Untagged
@@ -393,17 +392,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 670502502}
---- !u!114 &670502508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 670502502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2cb125d45f58c945987465771fc65d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &761169453
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,10 +462,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 852433733}
-  - component: {fileID: 852433734}
   - component: {fileID: 852433735}
   - component: {fileID: 852433737}
   - component: {fileID: 852433736}
+  - component: {fileID: 852433734}
   m_Layer: 5
   m_Name: Note
   m_TagString: Untagged
@@ -500,7 +488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 198, y: -320}
+  m_AnchoredPosition: {x: 255, y: 143}
   m_SizeDelta: {x: 307.8, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852433734
@@ -511,11 +499,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 852433732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1a71af858085f4fa030eec7cb8217e, type: 3}
+  m_Script: {fileID: 11500000, guid: 716ac4d3bc9b8eb4bac1738250ce1129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
-  initCanvas: {fileID: 263205798}
 --- !u!225 &852433735
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -571,7 +558,6 @@ GameObject:
   - component: {fileID: 1308160298}
   - component: {fileID: 1308160300}
   - component: {fileID: 1308160299}
-  - component: {fileID: 1308160302}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -642,18 +628,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1308160302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1308160297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e92a5fc6f8929d459b7c02a2e204384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid: {fileID: 0}
 --- !u!1 &1529481994
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85.4, y: 74.8}
-  m_SizeDelta: {x: 302.5, y: 179.4}
+  m_AnchoredPosition: {x: -135, y: 110}
+  m_SizeDelta: {x: 350, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1582201490
 MonoBehaviour:

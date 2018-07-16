@@ -8,10 +8,8 @@ public class Dialogue {
     public string sentence;
     public string picture1;
     public string picture2;
-    public string picture3;
     public string effect1;
     public string effect2;
-    public string effect3;
 	public string CG;
 	public string CG_effect;
 }

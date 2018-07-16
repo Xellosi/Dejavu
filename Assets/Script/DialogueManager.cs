@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
 
 	public Text nameText,dialogueText; //角色名稱Text, 對話Text
     public GameObject Dialogbox,ContinueButton; //對話框, 繼續鍵
-    public Image char1, char2, char3, CG;//角色圖
+    public Image char1, char2, CG;//角色圖
 
 
 
@@ -22,7 +22,6 @@ public class DialogueManager : MonoBehaviour
  
 
 	private static DialogueManager _instance = null;
-
 
 
 	private DialogueManager () {}
@@ -43,10 +42,6 @@ public class DialogueManager : MonoBehaviour
     {
 		_instance.transform.gameObject.SetActive(true);
         _Dialogue.Clear();
-        Dialogbox.SetActive(true);
-        //char1.transform.gameObject.SetActive(true);
-        //char2.transform.gameObject.SetActive(true);
-        //char3.transform.gameObject.SetActive(true);
         string line;
         string fileFullPath = Path.Combine(Application.dataPath, SavePath);
         fileFullPath = Path.Combine(fileFullPath, dialoguename + fileExtension);
@@ -146,32 +141,12 @@ public class DialogueManager : MonoBehaviour
 		else{
 			char2.transform.gameObject.SetActive(false);
 		}
-		//角色3
-		if(currentDialogue.picture3!=""){
-			char3.transform.gameObject.SetActive(true);
-			if(!imagepool.ContainsKey(currentDialogue.picture3)){
-				imagepool[currentDialogue.picture3]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture3));
-			}
-			char3.sprite=imagepool[currentDialogue.picture3];
-			if(currentDialogue.effect3!=""){
-				if(currentDialogue.effect3=="暗"){
-					char3.color=Color.gray;
-				}
-				else if(currentDialogue.effect3=="震"){
-					char3.gameObject.transform.DOShakePosition(0.5f,new Vector2(0,30),randomness:0);
-				}
-			}
-			else{
-				char3.color=Color.white;
-			}
-		}
-		else{
-			char3.transform.gameObject.SetActive(false);
-		}
-
 		//CG
 		if (currentDialogue.CG != "") {
-			char3.transform.gameObject.SetActive(true);
+			CG.transform.gameObject.SetActive(true);
+		}
+		else{
+			CG.transform.gameObject.SetActive(false);
 		}
 	}
 
