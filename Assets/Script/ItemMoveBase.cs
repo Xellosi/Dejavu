@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using System;
 public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 
     [SerializeField]public GameObject grid = null;
 	private Image _image;
     private bool collected=false;
-
+	public event Action<GameObject> check_item; 
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -36,10 +37,13 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     {
         if (eventData.pointerCurrentRaycast.gameObject != null)
         {
-			if (eventData.pointerCurrentRaycast.gameObject.name == "BackGround" || eventData.pointerCurrentRaycast.gameObject.name == grid.name)
-            {
-                transform.SetParent(grid.transform,true);
-            }
+			if (eventData.pointerCurrentRaycast.gameObject.name == "BackGround") {//空放 回到物品欄
+				transform.SetParent (grid.transform, true);
+			} else if (eventData.pointerCurrentRaycast.gameObject.name == grid.name) {//放開仍在物品欄 物品說明
+				check_item (this.gameObject);
+			} else { //放開時物品撞物品 跟GameManager查詢動作 
+				//GameManager.eventCheck(GameObject hold, GameObject collide)
+			}
         }
         transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
