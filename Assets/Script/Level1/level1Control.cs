@@ -4,14 +4,10 @@ using UnityEngine;
 using System;
 
 public class level1Control : MonoBehaviour {
-	Dictionary<Tuple<string ,string > ,string > a = new Dictionary<Tuple<string ,string >, string>();
+	Dictionary<Tuple<string ,string >,Action<GameObject ,GameObject >> a = new Dictionary<Tuple<string ,string >,Action<GameObject ,GameObject >>();
 	// dictionary string (hold.name+collide.name) , Action
 	// Use this for initialization
 	void Start () {
-		Tuple<string,string> x = new Tuple<string, string> ("1", "2");
-		Tuple<string,string> y = new Tuple<string, string> ("1", "2");
-		a[x]="3";
-		Debug.Log(a.ContainsKey(y));
 	}
 	
 	// Update is called once per frame

@@ -23,8 +23,7 @@ public class PlayerDataManager : MonoBehaviour {
             return _instance;
         }
     }
-
-
+		
     private PlayerDataManager() {
 
     }
@@ -36,6 +35,7 @@ public class PlayerDataManager : MonoBehaviour {
     #endregion
 
     public PlayerData data;
+	private bool IsLoaded = false;
 
     public SerializableDictionary<string, bool> Progress {
         get { return data.Progress; }
@@ -46,8 +46,6 @@ public class PlayerDataManager : MonoBehaviour {
         //Load
         LoadPlayerData();
     }
-
-    private bool IsLoaded = false;
 
     public void LoadPlayerData() {
         if(IsLoaded == true) {
