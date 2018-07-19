@@ -69,7 +69,6 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-
         if (_Dialogue.Count == 0) {
             EndDialogue();
             return;
@@ -102,7 +101,7 @@ public class DialogueManager : MonoBehaviour
 		if(currentDialogue.picture1!=""){
 			char1.transform.gameObject.SetActive(true);
 			if(!imagepool.ContainsKey(currentDialogue.picture1)){
-				imagepool[currentDialogue.picture1]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture1));
+				imagepool[currentDialogue.picture1]=Resources.Load<Sprite>(Path.Combine("Character/",currentDialogue.picture1));
 			}
 			char1.sprite=imagepool[currentDialogue.picture1];
 			if(currentDialogue.effect1!=""){
@@ -123,7 +122,7 @@ public class DialogueManager : MonoBehaviour
 		if(currentDialogue.picture2!=""){
 			char2.transform.gameObject.SetActive(true);
 			if(!imagepool.ContainsKey(currentDialogue.picture2)){
-				imagepool[currentDialogue.picture2]=Resources.Load<Sprite>(Path.Combine("Charactor/",currentDialogue.picture2));
+				imagepool[currentDialogue.picture2]=Resources.Load<Sprite>(Path.Combine("Character/",currentDialogue.picture2));
 			}
 			char2.sprite=imagepool[currentDialogue.picture2];
 			if(currentDialogue.effect2!=""){

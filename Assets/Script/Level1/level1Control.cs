@@ -21,4 +21,10 @@ public class level1Control : MonoBehaviour {
 	public string eventcheck(GameObject a, GameObject b){
 		return "";
 	}
+
+
+	//ToDo 創將整個Level各狀態值預設
+	public SerializableDictionary<string,string> Level1Init(){
+		return new SerializableDictionary<string,string> ();
+	}
 }

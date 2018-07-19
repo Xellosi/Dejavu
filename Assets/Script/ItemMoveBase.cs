@@ -11,7 +11,16 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     [SerializeField]public GameObject grid = null;
 	private Image _image;
     private bool collected=false;
-	public event Action<GameObject> check_item; 
+	public event Action<GameObject> check_item ; 
+
+
+	public void Start(){
+		//如果記錄消失
+		if (PlayerDataManager.instance.data.Level1_Progress [this.gameObject.name] == "" || PlayerDataManager.instance.data.Level1_Progress [this.gameObject.name] == "used")
+			Destroy (this.gameObject);
+		//如果在包包 set parent 在包包
+		check_item+= (GameObject obj) => {};
+	}
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -41,6 +50,7 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
 				transform.SetParent (grid.transform, true);
 			} else if (eventData.pointerCurrentRaycast.gameObject.name == grid.name) {//放開仍在物品欄 物品說明
 				check_item (this.gameObject);
+				transform.SetParent (grid.transform, true);
 			} else { //放開時物品撞物品 跟GameManager查詢動作 
 				//GameManager.eventCheck(GameObject hold, GameObject collide)
 			}

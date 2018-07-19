@@ -10,15 +10,12 @@ public class PlayerData{
 	public bool[] Levelclear;
 	#endregion
 
+	//level1~4
+	public int lastLevel;
 
-    [SerializeField]
-    public List<int> NumList;
-    [SerializeField]
-    public int[] NumArray;
-    [SerializeField]
-    public SerializableDictionary<string, bool> Level1_Progress = new SerializableDictionary<string, bool>();
-	public SerializableDictionary<string, bool> Level2_Progress = new SerializableDictionary<string, bool>();
-	public SerializableDictionary<string, bool> Level3_Progress = new SerializableDictionary<string, bool>();
-	public SerializableDictionary<string, bool> Level4_Progress = new SerializableDictionary<string, bool>();
+	public SerializableDictionary<string, string> Level1_Progress = new SerializableDictionary<string, string>();
+	public SerializableDictionary<string, string> Level2_Progress = new SerializableDictionary<string, string>();
+	public SerializableDictionary<string, string> Level3_Progress = new SerializableDictionary<string, string>();
+	public SerializableDictionary<string, string> Level4_Progress = new SerializableDictionary<string, string>();
 
 }
