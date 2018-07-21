@@ -4,30 +4,36 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using System;
 public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 
     [SerializeField]public GameObject grid = null;
+    [SerializeField]public GameObject initCanvas = null;
 	private Image _image;
+
     private bool collected=false;
-	public event Action<GameObject> check_item ; 
 
+    public void Init(){
+        grid = InventoryManager.Instance.transform.GetChild(0).gameObject;
+		_image = GetComponent<Image> ();
+    }
+    void OnEnable(){
+        SceneManager.sceneLoaded += checkinitC;
+    }
 
-	public void Start(){
-		//如果記錄消失
-		if (PlayerDataManager.instance.data.Level1_Progress [this.gameObject.name] == "" || PlayerDataManager.instance.data.Level1_Progress [this.gameObject.name] == "used")
-			Destroy (this.gameObject);
-		//如果在包包 set parent 在包包
-		check_item+= (GameObject obj) => {};
-	}
+    void checkinitC(Scene a , LoadSceneMode b){
+        if (initCanvas==null){
+            initCanvas = GameObject.Find("BackGround");
+        }
+        //transform.position = new Vector3(transform.position.x,transform.position.y,0.0f);
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
         Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         p.z=0f;
         transform.position=p;
-		if (eventData.pointerCurrentRaycast.gameObject.name == "BackGround") {
+		if (eventData.pointerCurrentRaycast.gameObject.name == initCanvas.name) {
 			_image.SetNativeSize ();
 		}
     }
@@ -46,21 +52,16 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     {
         if (eventData.pointerCurrentRaycast.gameObject != null)
         {
-			if (eventData.pointerCurrentRaycast.gameObject.name == "BackGround") {//空放 回到物品欄
-				transform.SetParent (grid.transform, true);
-			} else if (eventData.pointerCurrentRaycast.gameObject.name == grid.name) {//放開仍在物品欄 物品說明
-				check_item (this.gameObject);
-				transform.SetParent (grid.transform, true);
-			} else { //放開時物品撞物品 跟GameManager查詢動作 
-				//GameManager.eventCheck(GameObject hold, GameObject collide)
-			}
+            if (eventData.pointerCurrentRaycast.gameObject.name == initCanvas.name || eventData.pointerCurrentRaycast.gameObject.name == grid.name)
+            {
+                transform.SetParent(grid.transform,true);
+            }
         }
         transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 
-	public void Init(){
-		_image = GetComponent<Image> ();
-		grid = InventoryManager.Instance.transform.GetChild(0).gameObject;
-	}
+
+
+    
 }
 

@@ -5,31 +5,19 @@ using System.Collections;
 
 public class MyMenu
 {
-	public static string filePath = @"Assets/MyGroupData.asset";
-
-	[MenuItem("Component/GenerateMyGroupData")]
+	public static string filePath = @"Assets/DramaEvents.asset";
+	//[MenuItem("Component/GenerateMyGroupData")]
 	public static void Generate()
 	{
-		MyGroupData gData = (MyGroupData)ScriptableObject.CreateInstance<MyGroupData>();
+		DramaTriggers gData = (DramaTriggers)ScriptableObject.CreateInstance<DramaTriggers>();
 
-		MemberData tom = new MemberData();
-		tom.name = "Tom";
-		tom.hp = 10;
-		tom.exp = 20;
+		DramaEvents tom = new DramaEvents();
+		DramaEvents sam = new DramaEvents();
+		DramaEvents bob = new DramaEvents();
 
-		MemberData sam = new MemberData();
-		sam.name = "Tom";
-		sam.hp = 30;
-		sam.exp = 40;
-
-		MemberData bob = new MemberData();
-		bob.name = "Tom";
-		bob.hp = 50;
-		bob.exp = 60;
-
-		gData.members.Add(tom);
-		gData.members.Add(sam);
-		gData.members.Add(bob);
+		gData.triggers.Add(tom);
+		gData.triggers.Add(sam);
+		gData.triggers.Add(bob);
 
 		string folder = Path.GetDirectoryName(filePath);
 		if(Directory.Exists(folder) == false)
@@ -40,18 +28,27 @@ public class MyMenu
 		AssetDatabase.CreateAsset(gData, filePath);
 	}
 
-	[MenuItem("Component/GenerateRandomMember")]
+	//[MenuItem("Component/GenerateRandomMember")]
 	public static void GenerateRandom()
 	{
 		if(File.Exists(filePath))
 		{
-			MyGroupData gData = (MyGroupData)AssetDatabase.LoadAssetAtPath(filePath, typeof(MyGroupData));
-			MemberData randomMember = new MemberData();
-			randomMember.name = Random.Range(55, 999).ToString();
-			randomMember.hp = Random.Range(1, 99);
-			randomMember.exp = Random.Range(1, 999);
-			gData.members.Add(randomMember);
+			DramaTriggers gData = (DramaTriggers)AssetDatabase.LoadAssetAtPath(filePath, typeof(DramaTriggers));
+			DramaEvents randomMember = new DramaEvents();
+			gData.triggers.Add(randomMember);
 			EditorUtility.SetDirty(gData);
 		}
+	}
+
+	[MenuItem("Level1/Newlevel1asset")]
+	public static void level1Objects(){
+		string path = @"Assets/Script/Level1/Level1Objects.asset";
+		LevelObjects A = (LevelObjects)ScriptableObject.CreateInstance<LevelObjects>();
+		AssetDatabase.CreateAsset(A,path);
+	}
+
+	[MenuItem("Level1/GenerateEvents")]
+	public static void Level1Triggers(){
+
 	}
 }
