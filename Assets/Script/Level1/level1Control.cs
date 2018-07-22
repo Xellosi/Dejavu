@@ -5,8 +5,13 @@ using System;
 
 public class level1Control : MonoBehaviour {
 	Dictionary<Tuple<string ,string >,Action<GameObject ,GameObject >> a = new Dictionary<Tuple<string ,string >,Action<GameObject ,GameObject >>();
+
 	// dictionary string (hold.name+collide.name) , Action
 	// Use this for initialization
+	void Awake(){
+		DataHolder holder = (DataHolder)Resources.Load("dataHolder" , typeof(DataHolder));
+	}
+
 	void Start () {
 	}
 	
