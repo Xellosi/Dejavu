@@ -44,8 +44,12 @@ public class Menu
 
 	[MenuItem("Level1/Newlevel1asset")]
 	public static void level1Objects(){
-		string path = @"Assets/Script/Level1/Level1Objects.asset";
+		string path = @"Assets/Resources/Level1/Level1Objects.asset";
+		string folder = Path.GetDirectoryName(path);
 		if (!File.Exists (path)) {
+			if(Directory.Exists(folder) == false){
+			Directory.CreateDirectory(folder);
+			}
 			LevelObjects A = (LevelObjects)ScriptableObject.CreateInstance<LevelObjects> ();
 			AssetDatabase.CreateAsset (A, path);
 		}
@@ -54,8 +58,8 @@ public class Menu
 
 	[MenuItem("Level1/NewlevelEvents")]
 	public static void Level1Triggers(){
-		string Objectspath = @"Assets/Script/Level1/Level1Objects.asset";
-		string Eventpath = @"Assets/Script/Level1/Level1Events.asset";
+		string Objectspath = @"Assets/Resources/Level1/Level1Objects.asset";
+		string Eventpath = @"Assets/Resources/Level1/Level1Events.asset";
 		LevelObjects A = (LevelObjects)AssetDatabase.LoadAssetAtPath(Objectspath, typeof(LevelObjects));
 		DramaTriggers D = (DramaTriggers)ScriptableObject.CreateInstance<DramaTriggers> ();
 		foreach (string drag in A.drag) {

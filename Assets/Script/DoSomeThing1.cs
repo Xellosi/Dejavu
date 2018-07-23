@@ -11,8 +11,12 @@ public class DoSomeThing1 : MonoBehaviour {
    void Start(){
        //DialogueManager.Instance.StartDialogue("test");
        //b=InventoryManager.Instance;
-	   GetItemInfo.ShowGetInfo("glove");
+	   //GetItemInfo.ShowGetInfo("glove");
 	   //DialogueManager.Instance.StartDialogue("test");
+   }
+
+   public void d(){
+       DialogueManager.Instance.StartDialogue("test");
    }
     [SerializeField] GameObject grid = null;
     public void ChangeImagePosition()

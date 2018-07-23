@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/opening.unity
     guid: df9c4c89ddf476c469cdbccaaa57ec0c
   - enabled: 1
-    path: Assets/true level 1 leftside.unity
+    path: Assets/Level1Leftside.unity
     guid: a2d6113174879224db9b8d28ddedcf93
   - enabled: 1
-    path: Assets/true level 1 rightside.unity
+    path: Assets/Level1Rightside.unity
     guid: 25f6884c4807ef443aa661749c098127

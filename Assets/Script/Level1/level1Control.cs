@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+//http://allenchou.net/2018/07/readable-debuggable-multi-condition-game-code/
 public class level1Control : MonoBehaviour {
 	Dictionary<Tuple<string ,string >,Action<GameObject ,GameObject >> a = new Dictionary<Tuple<string ,string >,Action<GameObject ,GameObject >>();
-
+	string path ="Level1/Level1Events";
 	// dictionary string (hold.name+collide.name) , Action
 	// Use this for initialization
 	void Awake(){
-		DataHolder holder = (DataHolder)Resources.Load("dataHolder" , typeof(DataHolder));
+		DramaTriggers drama = Resources.Load<DramaTriggers>(path);
+		foreach (var triggers in drama.triggers){
+			string[] e = triggers.name.Split(',');
+			Debug.Log(e[0]+e[1]);
+		}
 	}
 
 	void Start () {
