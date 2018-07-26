@@ -59,9 +59,5 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         }
         transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
-
-
-
-    
 }
 

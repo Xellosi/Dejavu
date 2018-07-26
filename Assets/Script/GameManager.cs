@@ -76,6 +76,6 @@ public class GameManager : MonoBehaviour {
 		}
 		PlayerDataManager.instance.LoadPlayerData ();
 		SceneManager.LoadScene(PlayerDataManager.instance.data.lastLevel);
-		SceneManager.sceneLoaded += (arg0, arg1) => this.CurrentState=(GameState)PlayerDataManager.instance.data.lastLevel;
+		SceneManager.sceneLoaded +=(arg0, arg1) => this.CurrentState=(GameState)PlayerDataManager.instance.data.lastLevel;
 	}
 }
