@@ -11,8 +11,8 @@ public class level1Control : MonoBehaviour {
 	//The look up Dictionary which map 
 	public Dictionary< string,Action<GameObject,GameObject>> EventTable = new Dictionary<string, Action<GameObject, GameObject>>();
 	string eventlogpath ="Level1/Level1Events";
-	// dictionary string (hold.name+collide.name) , Action
-	// Use this for initialization
+	public enum level1Item {}
+	public enum level1State{}
 	void Awake(){
 		
 		DramaTriggers drama = Resources.Load<DramaTriggers>(eventlogpath);
@@ -47,7 +47,7 @@ public class level1Control : MonoBehaviour {
 	void Init(){
 	}
 	//參考當前狀態 (存檔的狀態 判斷是否觸發事件 改寫紀錄...etc) 
-	public string eventcheck(GameObject a, GameObject b){
+	public string EventCheck(GameObject a, GameObject b){
 		return "";
 	}
 
