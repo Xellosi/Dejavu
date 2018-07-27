@@ -8,7 +8,7 @@ using DG.Tweening;
 public class DialogueManager : MonoBehaviour
 {
 	public static string PrefabPath = "Prefab/Dialogue_Canvas";
-    public const string SavePath = "Resources/Drama/";
+	public const string SavePath = "Resources/Dialogue/";
     public const string fileExtension = ".txt";
 
 	public Text nameText,dialogueText; //角色名稱Text, 對話Text

@@ -1,18 +1,38 @@
-﻿using System.Collections;
+﻿// https://stackoverflow.com/questions/24848332/how-do-i-make-a-dictionary-of-events
+//http://allenchou.net/2018/07/readable-debuggable-multi-condition-game-code/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-//http://allenchou.net/2018/07/readable-debuggable-multi-condition-game-code/
+using System.Reflection;
 public class level1Control : MonoBehaviour {
-	Dictionary<Tuple<string ,string >,Action<GameObject ,GameObject >> a = new Dictionary<Tuple<string ,string >,Action<GameObject ,GameObject >>();
-	string path ="Level1/Level1Events";
+	//Dictionary of the two objects which collided
+	public Dictionary< string,Action<GameObject,GameObject>> DramaActions = new Dictionary<string,Action<GameObject,GameObject>>();
+	//The look up Dictionary which map 
+	public Dictionary< string,Action<GameObject,GameObject>> EventTable = new Dictionary<string, Action<GameObject, GameObject>>();
+	string eventlogpath ="Level1/Level1Events";
 	// dictionary string (hold.name+collide.name) , Action
 	// Use this for initialization
 	void Awake(){
-		DramaTriggers drama = Resources.Load<DramaTriggers>(path);
-		foreach (var triggers in drama.triggers){
-			string[] e = triggers.name.Split(',');
-			Debug.Log(e[0]+e[1]);
+		
+		DramaTriggers drama = Resources.Load<DramaTriggers>(eventlogpath);
+		foreach (var trigger in drama.triggers){
+			foreach(string EventName in trigger.events){
+				//如果有
+				if (EventName.Contains ("Dialogue")) {
+					DramaActions [trigger.name] += (GameObject arg1, GameObject arg2) => {
+						DialogueManager.Instance.StartDialogue (EventName.Replace("Dialogue:",""));};
+				} 
+				else {
+					if (!EventTable.ContainsKey (EventName)) {
+						Debug.Log (EventName + "Not Done");
+					} else if (EventName == "") {
+						Debug.Log ("EmptyEvent!! in"+trigger.name);
+					}else {
+						DramaActions [trigger.name] += EventTable [EventName];
+					}
+				}
+			}
 		}
 	}
 
