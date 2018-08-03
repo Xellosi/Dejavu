@@ -14,11 +14,8 @@ MonoBehaviour:
   triggers:
   - name: glove,eel
     events:
-    - 
-    - 
-    - 
-    - 
-    - 
+    - "\u624B\u5957\u9032\u7269\u54C1\u4F86"
+    - "\u6E6F\u5319\u9032\u7269\u54C1\u6B04"
   - name: glove,pot
     events: []
   - name: eel,eel

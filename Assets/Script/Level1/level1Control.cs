@@ -8,7 +8,7 @@ using System.Reflection;
 public class level1Control : MonoBehaviour {
 	//Dictionary of the two objects which collided
 	public Dictionary< string,Action<GameObject,GameObject>> DramaActions = new Dictionary<string,Action<GameObject,GameObject>>();
-	//The look up Dictionary which map 
+	//The look up Dictionary which map actionName and function
 	public Dictionary< string,Action<GameObject,GameObject>> EventTable = new Dictionary<string, Action<GameObject, GameObject>>();
 	string eventlogpath ="Level1/Level1Events";
 	public enum level1Item {}
@@ -19,17 +19,17 @@ public class level1Control : MonoBehaviour {
 		foreach (var trigger in drama.triggers){
 			foreach(string EventName in trigger.events){
 				//如果有
-				if (EventName.Contains ("Dialogue")) {
+				if (EventName.Contains ("對話")) {
 					DramaActions [trigger.name] += (GameObject arg1, GameObject arg2) => {
-						DialogueManager.Instance.StartDialogue (EventName.Replace("Dialogue:",""));};
+						DialogueManager.Instance.StartDialogue (EventName.Replace("對話:",""));};
 				} 
 				else {
-					if (!EventTable.ContainsKey (EventName)) {
+					if (!EventTable.ContainsKey (EventName)){
 						Debug.Log (EventName + "Not Done");
-					} else if (EventName == "") {
+					}else if (EventName == "") {
 						Debug.Log ("EmptyEvent!! in"+trigger.name);
-					}else {
-						DramaActions [trigger.name] += EventTable [EventName];
+					}else{
+						
 					}
 				}
 			}
@@ -56,4 +56,6 @@ public class level1Control : MonoBehaviour {
 	public SerializableDictionary<string,string> Level1Init(){
 		return new SerializableDictionary<string,string> ();
 	}
+
+
 }
