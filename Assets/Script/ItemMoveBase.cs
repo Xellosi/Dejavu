@@ -14,7 +14,7 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     private bool collected=false;
 
     public void Init(){
-        grid = InventoryManager.Instance.transform.GetChild(0).gameObject;
+		grid = InventoryManager.Instance.transform.GetChild(0).GetChild(0).gameObject;
 		_image = GetComponent<Image> ();
     }
     void OnEnable(){

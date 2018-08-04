@@ -7,7 +7,7 @@ using System.IO;
 using DG.Tweening;
 public class DialogueManager : MonoBehaviour
 {
-	public static string PrefabPath = "Prefab/Dialogue_Canvas";
+	public static string PrefabPath = "Prefab/DialogueCanvas";
 	public const string SavePath = "Resources/Dialogue/";
     public const string fileExtension = ".txt";
 

@@ -25,8 +25,8 @@ public class InventoryManager : MonoBehaviour {
                  SceneManager.sceneLoaded += rendercameraupdate;
 	}
 	void rendercameraupdate(Scene a , LoadSceneMode b){
-		if(_instance.GetComponent<Canvas>().worldCamera == null){
-			_instance.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+		if(this.GetComponent<Canvas>().worldCamera == null){
+			this.GetComponent<Canvas>().worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
 		}
 	}
 }
