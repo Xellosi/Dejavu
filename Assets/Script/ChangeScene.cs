@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour {
 
@@ -10,12 +11,7 @@ public class ChangeScene : MonoBehaviour {
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
-    void Awake()
-    {
-        FadeController.Instance.FadeIn(1f);
-    }
-
-    public void ChangeToScene(string SceneName)
+	public void ChangeToScene(string SceneName)
     {
         string lastSceneName = SceneManager.GetActiveScene().name;
         LastSceneStack.Push(lastSceneName);

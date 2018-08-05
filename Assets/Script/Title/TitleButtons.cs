@@ -21,6 +21,7 @@ public class TitleButtons : MonoBehaviour {
 	}
 	public void NewGame(){
 		GameManager.Instance.LoadNewLevel1 ();
+		FadeController.Instance.FadeIn (1.0f);
 	}
 	public void LoadGame(){
 		GameManager.Instance.LoadLastGame ();
