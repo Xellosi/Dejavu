@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	public enum GameState { Title,Level1,Level2,Level3,Level4 };
 	public GameState CurrentState;
 	public MonoBehaviour _LevelControl;
+	public List<string> _Levelevents;
+
 
 	private static GameManager _instance;
 	private GameManager(){

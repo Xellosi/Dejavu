@@ -56,7 +56,7 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
             {
                 transform.SetParent(grid.transform,true);
             }
-			else if (GameManager.Instance._LevelControl.){
+			else if (true){
 				
 			}
         }
