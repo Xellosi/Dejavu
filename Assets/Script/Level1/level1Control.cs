@@ -5,11 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Reflection;
-public class level1Control : MonoBehaviour {
-	//Dictionary of the two objects which collided
-	public Dictionary< string,Action<GameObject,GameObject>> DramaActions = new Dictionary<string,Action<GameObject,GameObject>>();
-	//The look up Dictionary which map actionName and function
-	public Dictionary< string,Action<GameObject,GameObject>> EventTable = new Dictionary<string, Action<GameObject, GameObject>>();
+public class level1Control : ControlBase {
 	string eventlogpath ="Level1/Level1Events";
 	public enum level1Item {}
 	public enum level1State{}
