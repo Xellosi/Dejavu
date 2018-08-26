@@ -8,7 +8,8 @@ public class InventoryManager : MonoBehaviour {
 	public static string PrefabPath = "Prefab/InventoryCanvas";
 	private static InventoryManager _instance = null;
 	private InventoryManager () {}
-	public Button setting;
+	private Button SettingButton;
+	private GameObject Setting=null;
 
 	public static InventoryManager Instance{
 		get{
@@ -24,7 +25,8 @@ public class InventoryManager : MonoBehaviour {
 
 	void OnEnable(){
 		SceneManager.sceneLoaded += rendercameraupdate;
-		setting = transform.GetChild (0).GetChild (1).GetComponent<Button> ();
+		SettingButton = transform.GetChild (0).GetChild (1).GetComponent<Button> ();
+		SettingButton.onClick.AddListener (OpenSetting);
 	}
 	void rendercameraupdate(Scene a , LoadSceneMode b){
 		if(this.GetComponent<Canvas>().worldCamera == null){
@@ -33,6 +35,11 @@ public class InventoryManager : MonoBehaviour {
 	}
 
 	void OpenSetting(){
-		setting = transform.GetChild (0).GetChild (1).GetComponent<Button> ();
+		if (Setting == null) {
+			Setting = (GameObject)Instantiate(Resources.Load ("Prefab/SettingCanvas"));
+		} 
+		else {
+			Setting.SetActive (true);
+		}
 	}
 }

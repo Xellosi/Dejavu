@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 
 	private Queue<Dialogue> _Dialogue = new Queue<Dialogue>();
     private Dictionary<string, Sprite> imagepool = new Dictionary<string, Sprite>();
- 
+	private Action Callback;
 
 	private static DialogueManager _instance = null;
 
@@ -66,6 +66,37 @@ public class DialogueManager : MonoBehaviour
         ContinueButton.GetComponentInChildren<Text>().text = "Continue>>";
         DisplayNextSentence();
     }
+	//https://stackoverflow.com/questions/27547122/c-sharp-override-with-different-parameters
+	public void StartDialogue(string dialoguename, Action _callback)
+	{
+		_instance.transform.gameObject.SetActive(true);
+		_Dialogue.Clear();
+		string line;
+		string fileFullPath = Path.Combine(Application.dataPath, SavePath);
+		fileFullPath = Path.Combine(fileFullPath, dialoguename + fileExtension);
+		if ((Directory.Exists(fileFullPath))) {
+			Debug.Log("無此對話");
+			return;
+		}
+		System.IO.StreamReader file = new System.IO.StreamReader(fileFullPath);
+		while ((line = file.ReadLine()) != null) {
+			if (line[0] == '#') {
+				continue;
+			}
+			try {
+				_Dialogue.Enqueue(JsonUtility.FromJson<Dialogue>(line));
+			}
+			catch (Exception e) {
+				Debug.Log(e.Message);
+				return;
+			}
+		}
+		Callback = _callback;
+		file.Close();
+		ContinueButton.GetComponentInChildren<Text>().text = "Continue>>";
+		DisplayNextSentence();
+	}
+
 
     public void DisplayNextSentence()
     {
@@ -155,7 +186,10 @@ public class DialogueManager : MonoBehaviour
 
 	void EndDialogue ()
 	{
+		if (Callback != null)
+			Callback.Invoke();
 		this.transform.gameObject.SetActive(false);
+		this.Callback = null;
 	}
 
 	//生成測試用對話
