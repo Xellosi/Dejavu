@@ -25,7 +25,6 @@ public class PlayerDataManager : MonoBehaviour {
     }
 		
     private PlayerDataManager() {
-
     }
 
     public void Awake() {

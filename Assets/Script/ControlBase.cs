@@ -8,4 +8,7 @@ public class ControlBase : MonoBehaviour {
 	public Dictionary< string,Action<GameObject,GameObject>> DramaActions = new Dictionary<string,Action<GameObject,GameObject>>();
 	//The look up Dictionary which map actionName and function
 	public Dictionary< string,Action<GameObject,GameObject>> EventTable = new Dictionary<string, Action<GameObject, GameObject>>();
+
+	public virtual void Init(){}
+	public virtual void SaveInit(){}
 }

@@ -45,10 +45,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void LoadNewLevel1(){
-		var control1 = this.gameObject.AddComponent<level1Control> (); //把level控制抓進GameManager
-		PlayerDataManager.instance.Level1_Progress = control1.Level1Init ();//Control裡寫進所有Progress的初始狀態
+		var control1 = this.gameObject.AddComponent<Level1Control> (); //把level控制抓進GameManager
+		PlayerDataManager.instance.Level1_Progress = control1.Level1SaveInit ();//Control裡寫進所有Progress的初始狀態
 		SceneManager.LoadScene(1);
-		SceneManager.sceneLoaded += (arg0, arg1) => this.CurrentState=GameState.Level1;
+		this.CurrentState=GameState.Level1;
 	}
 	public void LoadNewLevel2(){
 
@@ -64,16 +64,16 @@ public class GameManager : MonoBehaviour {
 			Destroy(_LevelControl);
 		switch (PlayerDataManager.instance.data.lastLevel) {
 		case 1:
-			_LevelControl = this.gameObject.AddComponent<level1Control> ();
+			_LevelControl = this.gameObject.AddComponent<Level1Control> ();
 			break;
 		case 2:
-			_LevelControl = this.gameObject.AddComponent<level2Control>();
+			_LevelControl = this.gameObject.AddComponent<Level2Control>();
 			break;
 		case 3:
-			_LevelControl = this.gameObject.AddComponent<level3Control>();
+			_LevelControl = this.gameObject.AddComponent<Level3Control>();
 			break;
 		case 4:
-			_LevelControl = this.gameObject.AddComponent<level4Control>();
+			_LevelControl = this.gameObject.AddComponent<Level4Control>();
 			break;
 		}
 		PlayerDataManager.instance.LoadPlayerData ();

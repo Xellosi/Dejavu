@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 114075752465990564}
   - component: {fileID: 225620927481898032}
   - component: {fileID: 114050881201385682}
-  - component: {fileID: 114848755306554250}
   m_Layer: 5
   m_Name: Spoon
   m_TagString: Untagged
@@ -44,6 +43,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
   initCanvas: {fileID: 0}
+  DirectPick: 1
+  collected: 0
 --- !u!114 &114075752465990564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,19 +72,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114848755306554250
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1587345663846288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9627285e929d8484fb9b9c31e6b8384c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid: {fileID: 0}
-  initCanvas: {fileID: 0}
 --- !u!222 &222909514243821154
 CanvasRenderer:
   m_ObjectHideFlags: 1

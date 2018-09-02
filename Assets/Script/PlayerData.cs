@@ -14,6 +14,7 @@ public class PlayerData{
 	public int lastLevel;
 
 	public SerializableDictionary<string, string> Level1_Progress = new SerializableDictionary<string, string>();
+	//筆電:未充電/已充電 
 	public SerializableDictionary<string, string> Level2_Progress = new SerializableDictionary<string, string>();
 	public SerializableDictionary<string, string> Level3_Progress = new SerializableDictionary<string, string>();
 	public SerializableDictionary<string, string> Level4_Progress = new SerializableDictionary<string, string>();

@@ -67,6 +67,7 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 	//https://stackoverflow.com/questions/27547122/c-sharp-override-with-different-parameters
+	//https://stackoverflow.com/questions/5414515/c-sharp-passing-a-method-as-a-parameter-to-another-method
 	public void StartDialogue(string dialoguename, Action _callback)
 	{
 		_instance.transform.gameObject.SetActive(true);
@@ -186,9 +187,9 @@ public class DialogueManager : MonoBehaviour
 
 	void EndDialogue ()
 	{
+		this.transform.gameObject.SetActive(false);
 		if (Callback != null)
 			Callback.Invoke();
-		this.transform.gameObject.SetActive(false);
 		this.Callback = null;
 	}
 

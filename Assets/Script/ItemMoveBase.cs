@@ -11,8 +11,8 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     [SerializeField]public GameObject initCanvas = null;
 	private Image _image;
 
-    private bool collected=false;
-
+    public bool DirectPick=true;
+    public bool collected = false;
     public void Init(){
 		grid = InventoryManager.Instance.transform.GetChild(0).GetChild(0).gameObject;
 		_image = GetComponent<Image> ();
@@ -42,9 +42,9 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     {
 		transform.SetParent(InventoryManager.Instance.transform, true);
         transform.GetComponent<CanvasGroup>().blocksRaycasts = false;
-        if(collected == false){
-            collected=true;
-            transform.SetParent(grid.transform,true);
+        if(DirectPick == true & collected == false){
+            PutInBag();
+            picking();
         }  
     }
 
@@ -62,5 +62,11 @@ public class ItemMoveBase :MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         }
         transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
+    public void PutInBag(){
+        collected = true;
+        transform.SetParent(grid.transform,true);
+    }
+    public virtual void picking(){
+    } 
 }
 
