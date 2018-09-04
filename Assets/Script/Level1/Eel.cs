@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class Eel : ItemMoveBase {
 
 	// Use this for initialization
@@ -18,18 +18,11 @@ public class Eel : ItemMoveBase {
 	void Update () {
 		
 	}
-
-	bool CheckInBag(string name){
-		foreach(Transform child in transform){
-			if (name == child.gameObject.name){
-				return true;
-			}
-		}
-		return false;
-	}
-
 	public override void picking(){
 		GetItemInfo.ShowGetInfo("Eel");
+	}
+	public override void ProtectedPick(){
+		DialogueManager.Instance.StartDialogue("徒手拿電鰻");
 	}
 
 }

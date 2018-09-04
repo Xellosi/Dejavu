@@ -19,8 +19,10 @@ public class GetItemInfo{
 		c.GetComponent<Canvas> ().worldCamera = GameObject.Find ("Main Camera").GetComponent<Camera> ();
 		var i = GameObject.Instantiate( Resources.Load<Sprite> (Path.Combine(path, ItemName)));
 		c.transform.GetChild (0).GetChild (0).GetComponent<Image> ().sprite = i;
+		if(_callback!=null){
 		Button ok = c.GetComponentInChildren<Button> ();
 		ok.onClick.AddListener(()=>_callback());
+		}
 	}
 	
 }

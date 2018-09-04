@@ -266,6 +266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453da732377afb142be0f33fbf2edbd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  initCanvas: {fileID: 0}
+  DirectPick: 1
+  collected: 0
 --- !u!114 &321220946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,7 +776,7 @@ Prefab:
     - target: {fileID: 114909028883653128, guid: 993261852516a474e9683325c3f26459,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993261852516a474e9683325c3f26459, type: 2}
