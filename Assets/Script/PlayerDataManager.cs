@@ -35,24 +35,6 @@ public class PlayerDataManager : MonoBehaviour {
 
     public PlayerData data;
 	private bool IsLoaded = false;
-
-    public SerializableDictionary<string, string> Level1_Progress {
-		get { return data.Level1_Progress; }
-		set { data.Level1_Progress = value; }
-    }
-	public SerializableDictionary<string, string> Level2_Progress {
-		get { return data.Level2_Progress; }
-		set { data.Level2_Progress = value; }
-	}
-	public SerializableDictionary<string, string> Level3_Progress {
-		get { return data.Level3_Progress; }
-		set { data.Level3_Progress = value; }
-	}
-	public SerializableDictionary<string, string> Level4_Progress {
-		get { return data.Level4_Progress; }
-		set { data.Level4_Progress = value; }
-	}
-
     public void Start() {
         //Load
         LoadPlayerData();

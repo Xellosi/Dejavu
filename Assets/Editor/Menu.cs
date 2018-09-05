@@ -59,16 +59,16 @@ public class Menu
 	[MenuItem("Level1/NewlevelEvents")]
 	public static void Level1Triggers(){
 		string Objectspath = @"Assets/Resources/Level1/Level1Objects.asset";
-		string Eventpath = @"Assets/Resources/Level1/Level1Events.asset";
+		string Eventpath = @"Assets/Resources/Level1/Level1CollideEventList.asset";
 		LevelObjects A = (LevelObjects)AssetDatabase.LoadAssetAtPath(Objectspath, typeof(LevelObjects));
-		DramaTriggers D = (DramaTriggers)ScriptableObject.CreateInstance<DramaTriggers> ();
+		CollideEventList D = (CollideEventList)ScriptableObject.CreateInstance<CollideEventList> ();
 		foreach (string drag in A.drag) {
 			foreach (string hit in A.hit) { 
 				string e = drag + "," + hit;
-				D.triggers.Add (new DramaEvents(e));
+				D.CollideName.Add(new CollideEvent(e));
 			}
 		}
-		if (File.Exists (Objectspath)) {
+		if (!File.Exists (Eventpath)) {
 			AssetDatabase.CreateAsset (D, Eventpath);
 		}
 	}

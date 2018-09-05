@@ -7,7 +7,7 @@ public class Laptop : MonoBehaviour {
 	// Use this for initialization
 	public Image eel;
 	void Start () {
-		if(PlayerDataManager.instance.Level1_Progress["Eel"]=="消失"){
+		if(PlayerDataManager.instance.data.Level1_Progress["Eel"]=="消失"){
 			eel.gameObject.SetActive(true);
 		}
 	}
@@ -18,10 +18,10 @@ public class Laptop : MonoBehaviour {
 	}
 
 	public void Click(){
-		if(PlayerDataManager.instance.Level1_Progress["Laptop"]=="未充電"){
+		if(PlayerDataManager.instance.data.Level1_Progress["Laptop"]=="未充電"){
 			DialogueManager.Instance.StartDialogue("筆電_未充電");
 		}
-		else if (PlayerDataManager.instance.Level1_Progress["Laptop"]=="已充電"){
+		else if (PlayerDataManager.instance.data.Level1_Progress["Laptop"]=="已充電"){
 			DialogueManager.Instance.StartDialogue("筆電_已充電");
 		}
 	}

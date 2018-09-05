@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	
 	public enum GameState { Title,Level1,Level2,Level3,Level4 };
 	public GameState CurrentState;
-	public MonoBehaviour _LevelControl;
+	public ControlBase _LevelControl;
 	public List<string> _Levelevents;
 
 
@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void LoadNewLevel1(){
-		var control1 = this.gameObject.AddComponent<Level1Control> (); //把level控制抓進GameManager
-		PlayerDataManager.instance.Level1_Progress = control1.Level1SaveInit ();//Control裡寫進所有Progress的初始狀態
+		_LevelControl = this.gameObject.AddComponent<Level1Control> (); //把level控制抓進GameManager
+		PlayerDataManager.instance.data.Level1_Progress = _LevelControl.SaveInit();//Control裡寫進所有Progress的初始狀態
 		SceneManager.LoadScene(1);
 		this.CurrentState=GameState.Level1;
 	}

@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15503b4bededfe4b8b672ade4abda7b, type: 3}
+  m_Name: Level1CollideEventList
+  m_EditorClassIdentifier: 
+  CollideName:
+  - Objects: Eel,Laptop
+    FunctionName: 
+  - Objects: Eel,Pot
+    FunctionName: 
+  - Objects: Eel,Tip
+    FunctionName: 
+  - Objects: Eel,Dolphin
+    FunctionName: 
+  - Objects: Eel,ShellMan
+    FunctionName: 
+  - Objects: Eel,Eel
+    FunctionName: 
+  - Objects: Glove,Laptop
+    FunctionName: 
+  - Objects: Glove,Pot
+    FunctionName: 
+  - Objects: Glove,Tip
+    FunctionName: 
+  - Objects: Glove,Dolphin
+    FunctionName: 
+  - Objects: Glove,ShellMan
+    FunctionName: 
+  - Objects: Glove,Eel
+    FunctionName: GloveAndEel
+  - Objects: Leg,Laptop
+    FunctionName: 
+  - Objects: Leg,Pot
+    FunctionName: 
+  - Objects: Leg,Tip
+    FunctionName: 
+  - Objects: Leg,Dolphin
+    FunctionName: 
+  - Objects: Leg,ShellMan
+    FunctionName: 
+  - Objects: Leg,Eel
+    FunctionName: 
+  - Objects: Potion,Laptop
+    FunctionName: 
+  - Objects: Potion,Pot
+    FunctionName: 
+  - Objects: Potion,Tip
+    FunctionName: 
+  - Objects: Potion,Dolphin
+    FunctionName: 
+  - Objects: Potion,ShellMan
+    FunctionName: 
+  - Objects: Potion,Eel
+    FunctionName: 
+  - Objects: Seaweed,Laptop
+    FunctionName: 
+  - Objects: Seaweed,Pot
+    FunctionName: 
+  - Objects: Seaweed,Tip
+    FunctionName: 
+  - Objects: Seaweed,Dolphin
+    FunctionName: 
+  - Objects: Seaweed,ShellMan
+    FunctionName: 
+  - Objects: Seaweed,Eel
+    FunctionName: 
+  - Objects: Spoon,Laptop
+    FunctionName: 
+  - Objects: Spoon,Pot
+    FunctionName: 
+  - Objects: Spoon,Tip
+    FunctionName: 
+  - Objects: Spoon,Dolphin
+    FunctionName: 
+  - Objects: Spoon,ShellMan
+    FunctionName: 
+  - Objects: Spoon,Eel
+    FunctionName: 
+  - Objects: Fruit,Laptop
+    FunctionName: 
+  - Objects: Fruit,Pot
+    FunctionName: 
+  - Objects: Fruit,Tip
+    FunctionName: 
+  - Objects: Fruit,Dolphin
+    FunctionName: 
+  - Objects: Fruit,ShellMan
+    FunctionName: 
+  - Objects: Fruit,Eel
+    FunctionName: 
+  - Objects: Glass,Laptop
+    FunctionName: 
+  - Objects: Glass,Pot
+    FunctionName: 
+  - Objects: Glass,Tip
+    FunctionName: 
+  - Objects: Glass,Dolphin
+    FunctionName: 
+  - Objects: Glass,ShellMan
+    FunctionName: 
+  - Objects: Glass,Eel
+    FunctionName: 
+  - Objects: Book,Laptop
+    FunctionName: 
+  - Objects: Book,Pot
+    FunctionName: 
+  - Objects: Book,Tip
+    FunctionName: 
+  - Objects: Book,Dolphin
+    FunctionName: 
+  - Objects: Book,ShellMan
+    FunctionName: 
+  - Objects: Book,Eel
+    FunctionName: 

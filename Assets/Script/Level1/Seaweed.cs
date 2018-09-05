@@ -9,7 +9,7 @@ public class Seaweed : ItemMoveBase
     void Start()
     {
         Init();
-        if (PlayerDataManager.instance.Level1_Progress["Seaweed"] == "消失" || PlayerDataManager.instance.Level1_Progress["Seaweed"] == "包包")
+        if (PlayerDataManager.instance.data.Level1_Progress["Seaweed"] == "消失" || PlayerDataManager.instance.data.Level1_Progress["Seaweed"] == "包包")
         {
             Destroy(this.gameObject);
             return;
@@ -21,9 +21,12 @@ public class Seaweed : ItemMoveBase
     {
 
     }
+
+
+	//需在點完獲得物品消息在設collected為true 防止點物品後可直接拖拉
     public override void picking()
     {
         DialogueManager.Instance.StartDialogue("拿海藻", () =>GetItemInfo.ShowGetInfo("Seaweed", ()=>this.collected = true));
-        PlayerDataManager.instance.Level1_Progress["Seaweed"] = "包包";
+        PlayerDataManager.instance.data.Level1_Progress["Seaweed"] = "包包";
     }
 }

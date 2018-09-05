@@ -12,12 +12,19 @@ MonoBehaviour:
   m_Name: Level1Objects
   m_EditorClassIdentifier: 
   drag:
-  - glove
-  - eel
-  - grass
-  - leg
-  - potion
-  - spoon
+  - Eel
+  - Glove
+  - Leg
+  - Potion
+  - Seaweed
+  - Spoon
+  - Fruit
+  - Glass
+  - Book
   hit:
-  - eel
-  - pot
+  - Laptop
+  - Pot
+  - Tip
+  - Dolphin
+  - ShellMan
+  - Eel

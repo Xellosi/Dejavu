@@ -7,15 +7,15 @@ using UnityEngine.SceneManagement;
 public class ItemMoveBase : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 
-    [SerializeField] public GameObject grid = null;
-    [SerializeField] public GameObject initCanvas = null;
+    [SerializeField] public GameObject Inventory = null;
+    [SerializeField] public GameObject BackGround = null;
     private Image _image;
 
     public bool DirectPick = true;
     public bool collected = false;
     public void Init()
     {
-        grid = InventoryManager.Instance.transform.GetChild(0).GetChild(0).gameObject;
+        Inventory = InventoryManager.Instance.transform.GetChild(0).GetChild(0).gameObject;
         _image = GetComponent<Image>();
     }
     void OnEnable()
@@ -25,9 +25,9 @@ public class ItemMoveBase : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
     void checkinitC(Scene a, LoadSceneMode b)
     {
-        if (initCanvas == null)
+        if (BackGround == null)
         {
-            initCanvas = GameObject.Find("BackGround");
+            BackGround = GameObject.Find("BackGround");
         }
         //transform.position = new Vector3(transform.position.x,transform.position.y,0.0f);
     }
@@ -39,7 +39,7 @@ public class ItemMoveBase : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
             Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             p.z = 0f;
             transform.position = p;
-            if (eventData.pointerCurrentRaycast.gameObject.name == initCanvas.name)
+            if (eventData.pointerCurrentRaycast.gameObject.name == BackGround.name)
             {
                 _image.SetNativeSize();
             }
@@ -69,15 +69,25 @@ public class ItemMoveBase : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
     {
         if (collected == true)
         {
-            if (eventData.pointerCurrentRaycast.gameObject != null)
+            var GroundObj = eventData.pointerCurrentRaycast.gameObject;
+            if (GroundObj != null)
             {
-                if (eventData.pointerCurrentRaycast.gameObject.name == initCanvas.name || eventData.pointerCurrentRaycast.gameObject.name == grid.name)
+                if (GroundObj.name == BackGround.name)
                 {
-                    transform.SetParent(grid.transform, true);
+                    transform.SetParent(Inventory.transform, true);
                 }
-                else if (true)
+                else if (GroundObj.name == Inventory.name)
                 {
-
+                    Debug.Log("查看說明" + gameObject.name);
+                }
+                else
+                {
+                    if(GameManager.Instance._LevelControl.CollideDrama[gameObject.name + "," + 
+                    GroundObj.name]!="")
+                    GameManager.Instance._LevelControl.CallCollideEvent(GameManager.Instance._LevelControl.CollideDrama[gameObject.name + "," + 
+                    GroundObj.name],gameObject,GroundObj);
+                    else
+                    PutInBag();
                 }
             }
             transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -85,9 +95,9 @@ public class ItemMoveBase : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
     }
     public void PutInBag()
     {
-        transform.SetParent(grid.transform, true);
+        transform.SetParent(Inventory.transform, true);
     }
-    public virtual void picking() {}
+    public virtual void picking() { }
     public virtual void ProtectedPick() { }
 }
 
