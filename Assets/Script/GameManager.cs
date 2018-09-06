@@ -49,6 +49,10 @@ public class GameManager : MonoBehaviour {
 		PlayerDataManager.instance.data.Level1_Progress = _LevelControl.SaveInit();//Control裡寫進所有Progress的初始狀態
 		SceneManager.LoadScene(1);
 		this.CurrentState=GameState.Level1;
+		FadeController.Instance.FadeIn (1.0f,()=>DialogueManager.Instance.StartDialogue("前言",()=>{
+			SceneManager.LoadScene(2);
+			FadeController.Instance.FadeIn(1.0f,()=>DialogueManager.Instance.StartDialogue("進入房間"));
+		}));
 	}
 	public void LoadNewLevel2(){
 
@@ -81,3 +85,11 @@ public class GameManager : MonoBehaviour {
 		SceneManager.sceneLoaded +=(arg0, arg1) => this.CurrentState=(GameState)PlayerDataManager.instance.data.lastLevel;
 	}
 }
+
+
+
+
+
+
+
+//EVVVVVVVVVVVVVVVVVVVVVVENT SSSSSSSSSSSSSYSSSSSSSSSSSSSSSSSTTTTTTEEEEEEEMMMMMMMMMMMMMMMMMMMMMMMM要有按鈕才有反應

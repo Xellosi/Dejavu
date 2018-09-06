@@ -16,7 +16,6 @@ public class Laptop : MonoBehaviour {
 	void Update () {
 		
 	}
-
 	public void Click(){
 		if(PlayerDataManager.instance.data.Level1_Progress["Laptop"]=="未充電"){
 			DialogueManager.Instance.StartDialogue("筆電_未充電");

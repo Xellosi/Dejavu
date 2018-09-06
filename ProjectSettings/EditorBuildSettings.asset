@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Title.unity
     guid: df9c4c89ddf476c469cdbccaaa57ec0c
   - enabled: 1
+    path: Assets/intro.unity
+    guid: 51e52df32879b2b42a47ccdf63866568
+  - enabled: 1
     path: Assets/1-1Leftside.unity
     guid: a2d6113174879224db9b8d28ddedcf93
   - enabled: 1
