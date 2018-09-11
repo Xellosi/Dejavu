@@ -1,3 +1,0 @@
-{"name":"波絲","sentence":"怎麼半….都找不到充電器…伊悠?","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
-{"name":"","sentence":"(但手剛伸過去時，伊悠身上產生了少數電流，波絲的手感到一些麻木)","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
-{"name":"波絲","sentence":"看來還是得找個東西來抱起才行。","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}

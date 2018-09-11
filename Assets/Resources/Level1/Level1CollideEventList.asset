@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollideName:
   - Objects: Eel,Laptop
-    FunctionName: 
+    FunctionName: EelAndLaptop
   - Objects: Eel,Pot
     FunctionName: 
   - Objects: Eel,Tip
@@ -40,6 +40,8 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Eel,Book
     FunctionName: 
+  - Objects: Eel,Setting
+    FunctionName: 
   - Objects: Glove,Laptop
     FunctionName: 
   - Objects: Glove,Pot
@@ -51,7 +53,7 @@ MonoBehaviour:
   - Objects: Glove,ShellMan
     FunctionName: 
   - Objects: Glove,Eel
-    FunctionName: 
+    FunctionName: GloveAndEel
   - Objects: Glove,Glove
     FunctionName: 
   - Objects: Glove,Leg
@@ -68,10 +70,12 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Glove,Book
     FunctionName: 
+  - Objects: Glove,Setting
+    FunctionName: 
   - Objects: Leg,Laptop
     FunctionName: 
   - Objects: Leg,Pot
-    FunctionName: 
+    FunctionName: AddItemToPot
   - Objects: Leg,Tip
     FunctionName: 
   - Objects: Leg,Dolphin
@@ -95,6 +99,8 @@ MonoBehaviour:
   - Objects: Leg,Glass
     FunctionName: 
   - Objects: Leg,Book
+    FunctionName: 
+  - Objects: Leg,Setting
     FunctionName: 
   - Objects: Potion,Laptop
     FunctionName: 
@@ -124,10 +130,12 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Potion,Book
     FunctionName: 
+  - Objects: Potion,Setting
+    FunctionName: 
   - Objects: Seaweed,Laptop
     FunctionName: 
   - Objects: Seaweed,Pot
-    FunctionName: 
+    FunctionName: AddItemToPot
   - Objects: Seaweed,Tip
     FunctionName: 
   - Objects: Seaweed,Dolphin
@@ -152,10 +160,12 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Seaweed,Book
     FunctionName: 
+  - Objects: Seaweed,Setting
+    FunctionName: 
   - Objects: Spoon,Laptop
     FunctionName: 
   - Objects: Spoon,Pot
-    FunctionName: 
+    FunctionName: AddItemToPot
   - Objects: Spoon,Tip
     FunctionName: 
   - Objects: Spoon,Dolphin
@@ -179,6 +189,8 @@ MonoBehaviour:
   - Objects: Spoon,Glass
     FunctionName: 
   - Objects: Spoon,Book
+    FunctionName: 
+  - Objects: Spoon,Setting
     FunctionName: 
   - Objects: Fruit,Laptop
     FunctionName: 
@@ -208,6 +220,8 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Fruit,Book
     FunctionName: 
+  - Objects: Fruit,Setting
+    FunctionName: 
   - Objects: Glass,Laptop
     FunctionName: 
   - Objects: Glass,Pot
@@ -236,6 +250,8 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Glass,Book
     FunctionName: 
+  - Objects: Glass,Setting
+    FunctionName: 
   - Objects: Book,Laptop
     FunctionName: 
   - Objects: Book,Pot
@@ -263,4 +279,6 @@ MonoBehaviour:
   - Objects: Book,Glass
     FunctionName: 
   - Objects: Book,Book
+    FunctionName: 
+  - Objects: Book,Setting
     FunctionName: 

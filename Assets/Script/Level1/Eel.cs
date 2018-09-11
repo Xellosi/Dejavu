@@ -22,7 +22,7 @@ public class Eel : ItemMoveBase {
 		GetItemInfo.ShowGetInfo("Eel");
 	}
 	public override void ProtectedPick(){
-		DialogueManager.Instance.StartDialogue("徒手拿電鰻");
+		DialogueManager.Instance.StartDialogue("Level1/徒手拿電鰻");
 	}
 
 }

@@ -8,7 +8,7 @@ using DG.Tweening;
 public class DialogueManager : MonoBehaviour
 {
 	public static string PrefabPath = "Prefab/DialogueCanvas";
-	public const string SavePath = "Resources/Dialogue/";
+	public const string SavePath = "Dialogue/";
     public const string fileExtension = ".txt";
 
 	public Text nameText,dialogueText; //角色名稱Text, 對話Text
@@ -44,11 +44,26 @@ public class DialogueManager : MonoBehaviour
         _Dialogue.Clear();
         string line;
         string fileFullPath = Path.Combine(Application.dataPath, SavePath);
-        fileFullPath = Path.Combine(fileFullPath, dialoguename + fileExtension);
+        //fileFullPath = Path.Combine(fileFullPath, dialoguename + fileExtension);
+		fileFullPath = Path.Combine(SavePath, dialoguename);
         if ((Directory.Exists(fileFullPath))) {
             Debug.Log("無此對話");
             return;
         }
+		//IT TAKE ME A WHOLE NIGHT. MOTHER FXCKER
+		//https://answers.unity.com/questions/1411034/textasset-return-null.html
+		TextAsset  DialogueText = (TextAsset) Resources.Load(fileFullPath,typeof (TextAsset));
+		Debug.Log(DialogueText);
+		foreach(string s in DialogueText.text.Split('\n')){
+			try {
+				_Dialogue.Enqueue(JsonUtility.FromJson<Dialogue>(s));
+			}
+			catch (Exception e) {
+				Debug.Log(e.Message);
+				return;
+			}
+		}
+		/*
         System.IO.StreamReader file = new System.IO.StreamReader(fileFullPath);
         while ((line = file.ReadLine()) != null) {
             if (line[0] == '#') {
@@ -63,6 +78,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
         file.Close();
+		*/
         ContinueButton.GetComponentInChildren<Text>().text = "Continue>>";
         DisplayNextSentence();
     }
@@ -72,13 +88,27 @@ public class DialogueManager : MonoBehaviour
 	{
 		_instance.transform.gameObject.SetActive(true);
 		_Dialogue.Clear();
-		string line;
-		string fileFullPath = Path.Combine(Application.dataPath, SavePath);
-		fileFullPath = Path.Combine(fileFullPath, dialoguename + fileExtension);
+		string fileFullPath = Path.Combine(SavePath,dialoguename);
+		//fileFullPath = Path.Combine(fileFullPath, dialoguename + fileExtension);
+		fileFullPath = Path.Combine(SavePath, dialoguename);
 		if ((Directory.Exists(fileFullPath))) {
 			Debug.Log("無此對話");
 			return;
 		}
+		//IT TAKE ME A WHOLE NIGHT. MOTHER FXCKER
+		//https://answers.unity.com/questions/1411034/textasset-return-null.html
+		TextAsset  DialogueText = (TextAsset) Resources.Load(fileFullPath,typeof (TextAsset));
+		Debug.Log(DialogueText);
+		foreach(string s in DialogueText.text.Split('\n')){
+			try {
+				_Dialogue.Enqueue(JsonUtility.FromJson<Dialogue>(s));
+			}
+			catch (Exception e) {
+				Debug.Log(e.Message);
+				return;
+			}
+		}
+		/*
 		System.IO.StreamReader file = new System.IO.StreamReader(fileFullPath);
 		while ((line = file.ReadLine()) != null) {
 			if (line[0] == '#') {
@@ -92,8 +122,9 @@ public class DialogueManager : MonoBehaviour
 				return;
 			}
 		}
-		Callback = _callback;
 		file.Close();
+		*/
+		Callback = _callback;
 		ContinueButton.GetComponentInChildren<Text>().text = "Continue>>";
 		DisplayNextSentence();
 	}

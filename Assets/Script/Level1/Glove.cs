@@ -23,7 +23,7 @@ public class Glove : ItemMoveBase
     }
     public override void picking()
     {
-        DialogueManager.Instance.StartDialogue("拿手套1", () => GetItemInfo.ShowGetInfo("Glove", () =>DialogueManager.Instance.StartDialogue("拿手套2",()=>this.collected = true)));
+        DialogueManager.Instance.StartDialogue("Level1/拿手套1", () => GetItemInfo.ShowGetInfo("Glove", () =>DialogueManager.Instance.StartDialogue("Level1/拿手套2",()=>this.collected = true)));
         PlayerDataManager.instance.data.Level1_Progress["Glove"] = "包包";
     }
 }

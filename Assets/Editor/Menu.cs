@@ -68,8 +68,6 @@ public class Menu
 				D.CollideName.Add(new CollideEvent(e));
 			}
 		}
-		if (!File.Exists (Eventpath)) {
-			AssetDatabase.CreateAsset (D, Eventpath);
-		}
+		AssetDatabase.CreateAsset (D, Eventpath);
 	}
 }

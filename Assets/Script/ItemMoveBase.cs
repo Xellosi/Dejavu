@@ -44,7 +44,6 @@ public class ItemMoveBase : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                 _image.SetNativeSize();
             }
         }
-        Debug.Log(collected);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -82,12 +81,14 @@ public class ItemMoveBase : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                 }
                 else
                 {
-                    if(GameManager.Instance._LevelControl.CollideDrama[gameObject.name + "," + 
-                    GroundObj.name]!="")
-                    GameManager.Instance._LevelControl.CallCollideEvent(GameManager.Instance._LevelControl.CollideDrama[gameObject.name + "," + 
-                    GroundObj.name],gameObject,GroundObj);
+                    Debug.Log(gameObject.name+","+GroundObj.name);
+                    if (GameManager.Instance._LevelControl.CollideEvent[gameObject.name + "," + GroundObj.name] != "")
+                    {
+                        GameManager.Instance._LevelControl.CallCollideEvent(GameManager.Instance._LevelControl.CollideEvent[gameObject.name + "," +
+                        GroundObj.name], gameObject, GroundObj);
+                    }
                     else
-                    PutInBag();
+                        PutInBag();
                 }
             }
             transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
