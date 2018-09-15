@@ -8,7 +8,7 @@ public class Eel : ItemMoveBase {
 	void Start () {
 		DirectPick = false;
 		Init ();
-		if(PlayerDataManager.instance.data.Level1_Progress["Eel"]=="消失" || PlayerDataManager.instance.data.Level1_Progress["Eel"]=="包包"){
+		if(PlayerDataManager.instance.data.Level1_Progress["Eel"]=="消失" || PlayerDataManager.instance.data.Level1_Progress["Eel"]=="背包"){
 			Destroy(this.gameObject);
 			return;
 		}

@@ -44,10 +44,11 @@ public class Level1Control : ControlBase
         temp["Glove"] = "場景";
         temp["Spoon"] = "場景";
         temp["Glass"] = "未出現";
-        temp["Position"] = "未出現";
+        temp["Potion"] = "未出現";
         temp["Tip"] = "關閉";
         temp["Leg"] = "未出現";
         temp["PotThings"] = "";
+        temp["Fruit"]="場景";
         return temp;
     }
 
@@ -68,17 +69,15 @@ public class Level1Control : ControlBase
     }
     public void AllCollect()
     {
-        if (PlayerDataManager.instance.data.Level1_Progress["Seaweed"] != "包包")
+        if (PlayerDataManager.instance.data.Level1_Progress["Seaweed"] != "背包")
             return;
-        if (PlayerDataManager.instance.data.Level1_Progress["Glove"] != "包包")
+        if (PlayerDataManager.instance.data.Level1_Progress["Spoon"] != "背包")
             return;
-        if (PlayerDataManager.instance.data.Level1_Progress["Spoon"] != "包包")
-            return;
-        if (PlayerDataManager.instance.data.Level1_Progress["Leg"] != "包包")
+        if (PlayerDataManager.instance.data.Level1_Progress["Leg"] != "背包")
             return;
         DialogueManager.Instance.StartDialogue("Level1/購得蛙腿", () => GetItemInfo.ShowGetInfo("Leg", () =>
         {
-            Debug.Log("將蛙腿放入包包");
+            Debug.Log("將蛙腿放入背包");
         }));
     }
 
@@ -95,9 +94,10 @@ public class Level1Control : ControlBase
         DialogueManager.Instance.StartDialogue("Level1/拿電鰻_1", () =>
         {
             Destroy(hold);
+            PlayerDataManager.instance.data.Level1_Progress["Glove"]="消失";
             ground.GetComponent<Eel>().collected = true;
             ground.GetComponent<Eel>().PutInBag();
-            PlayerDataManager.instance.data.Level1_Progress["Eel"]="包包";
+            PlayerDataManager.instance.data.Level1_Progress["Eel"]="背包";
             GetItemInfo.ShowGetInfo("Eel", () =>
             {
                 DialogueManager.Instance.StartDialogue("Level1/拿電鰻_2", () =>
@@ -105,7 +105,7 @@ public class Level1Control : ControlBase
                      var spoon = GameObject.Find("Spoon").GetComponent<Spoon>();
                      spoon.collected = true;
                      spoon.PutInBag();
-                     PlayerDataManager.instance.data.Level1_Progress["Spoon"]="包包";
+                     PlayerDataManager.instance.data.Level1_Progress["Spoon"]="背包";
                      GetItemInfo.ShowGetInfo("Spoon");
                  });
             });
@@ -117,18 +117,19 @@ public class Level1Control : ControlBase
     {
         if (PlayerDataManager.instance.data.Level1_Progress["PotThings"] == "")
         {
-            if (hold.name != "Seaweed")
+            if (hold.name != "Leg")
             {
                 hold.GetComponent<ItemMoveBase>().PutInBag();
             }
             else
             {
-                PlayerDataManager.instance.data.Level1_Progress["PotThings"] = "Seaweed";
-                PlayerDataManager.instance.data.Level1_Progress["Seaweed"]="消失";
+                GameObject.Find("Soup").GetComponent<Image>().sprite=Resources.Load<Sprite>("Item/Level1/湯_蛙腳");
+                PlayerDataManager.instance.data.Level1_Progress["PotThings"] = "Leg";
+                PlayerDataManager.instance.data.Level1_Progress["Leg"]="消失";
                 Destroy(hold);
             }
         }
-        else if (PlayerDataManager.instance.data.Level1_Progress["PotThings"] == "Seaweed")
+        else if (PlayerDataManager.instance.data.Level1_Progress["PotThings"] == "Leg")
         {
             if (hold.name != "Spoon")
             {
@@ -136,25 +137,31 @@ public class Level1Control : ControlBase
             }
             else
             {
-                PlayerDataManager.instance.data.Level1_Progress["PotThings"] = "Seaweed,Spoon";
+                GameObject.Find("Soup").GetComponent<Image>().sprite=Resources.Load<Sprite>("Item/Level1/湯_蛙腳_湯匙");
+                PlayerDataManager.instance.data.Level1_Progress["PotThings"] = "Leg,Spoon";
                 PlayerDataManager.instance.data.Level1_Progress["Spoon"]="消失";
                 Destroy(hold);
             }
         }
-        else if (PlayerDataManager.instance.data.Level1_Progress["PotThings"] == "Seaweed,Spoon")
+        else if (PlayerDataManager.instance.data.Level1_Progress["PotThings"] == "Leg,Spoon")
         {
-            if (hold.name != "Leg")
+            if (hold.name != "Seaweed")
             {
                 hold.GetComponent<ItemMoveBase>().PutInBag();
             }
             else
             {
-                PlayerDataManager.instance.data.Level1_Progress["PotThings"] = "Seaweed,Spoon,Leg";
+                GameObject.Find("Soup").GetComponent<Image>().sprite=Resources.Load<Sprite>("Item/Level1/湯_蛙腳_湯匙_海草");
+                PlayerDataManager.instance.data.Level1_Progress["PotThings"] = "Leg,Spoon,Seaweed";
                 PlayerDataManager.instance.data.Level1_Progress["Leg"]="消失";
                 Destroy(hold);
                 GameObject potion =  Instantiate(Resources.Load("Item/Level1/Potion", typeof(GameObject)) as GameObject);
                 potion.transform.SetParent(GameObject.Find("BackGround").transform);
                 potion.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                potion.name = "Potion";
+                potion.GetComponent<Potion>().PutInBag();
+                DialogueManager.Instance.StartDialogue("Level1/藥水完成",()=> GetItemInfo.ShowGetInfo("Potion"));
+                PlayerDataManager.instance.data.Level1_Progress["Potion"]="背包";
                 Debug.Log("GetPotion");
             }
         }
@@ -169,6 +176,7 @@ public class Level1Control : ControlBase
         leg.name = "Leg";
         leg.GetComponent<Leg>().PutInBag();
         DialogueManager.Instance.StartDialogue("Level1/電鰻放筆電", () => GetItemInfo.ShowGetInfo("Leg",()=>CheckItemCollection()));
+        PlayerDataManager.instance.data.Level1_Progress["Eel"]="消失";
         Destroy(hold);
         //Resource Load Leg To Bag
         CheckItemCollection();
@@ -192,5 +200,16 @@ public class Level1Control : ControlBase
         return;
         PlayerDataManager.instance.data.Level1_Progress["Tip"]="開啟";
         DialogueManager.Instance.StartDialogue("Level1/東西到齊");
+    }
+
+    public void GlassAndDolphin(GameObject hold, GameObject ground){
+        Destroy(hold);
+        GameObject book = Instantiate(Resources.Load("Item/Level1/Book", typeof(GameObject)) as GameObject);
+        book.transform.SetParent(GameObject.Find("BackGround").transform);
+        book.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        book.name = "Book";
+        book.GetComponent<Book>().PutInBag();
+        DialogueManager.Instance.StartDialogue("Level1/電鰻放筆電", () => GetItemInfo.ShowGetInfo("Book"));
+        PlayerDataManager.instance.data.Level1_Progress["Glass"]="消失";
     }
 }

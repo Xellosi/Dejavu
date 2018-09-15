@@ -98,7 +98,7 @@ public class DialogueManager : MonoBehaviour
 		//IT TAKE ME A WHOLE NIGHT. MOTHER FXCKER
 		//https://answers.unity.com/questions/1411034/textasset-return-null.html
 		TextAsset  DialogueText = (TextAsset) Resources.Load(fileFullPath,typeof (TextAsset));
-		Debug.Log(DialogueText);
+		Debug.Log(dialoguename+","+DialogueText);
 		foreach(string s in DialogueText.text.Split('\n')){
 			try {
 				_Dialogue.Enqueue(JsonUtility.FromJson<Dialogue>(s));

@@ -16,6 +16,17 @@ public class ChangeScene : MonoBehaviour {
         string lastSceneName = SceneManager.GetActiveScene().name;
         LastSceneStack.Push(lastSceneName);
         SceneManager.LoadSceneAsync(SceneName);
+        if(gameObject.name=="right to left button" & PlayerDataManager.instance.data.Level1_Progress["Potion"]=="背包" & SceneName=="1-1Leftside"){
+            FadeController.Instance.FadeIn(1.0f,()=>{
+                DialogueManager.Instance.StartDialogue("Level1/給公主藥水",()=>{
+                    Destroy(GameObject.Find("Potion"));
+                    SceneManager.LoadScene(4);
+                    FadeController.Instance.FadeIn(1.0f,()=>{
+                        DialogueManager.Instance.StartDialogue("Level1/新聲音");
+                    });
+                });
+            });
+        }
     }
 
     public void ReturnToLastScene()

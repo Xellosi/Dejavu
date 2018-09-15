@@ -1,0 +1,1 @@
+{"name":"波絲","sentence":"幾個月前才種現在長得真快阿……","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}

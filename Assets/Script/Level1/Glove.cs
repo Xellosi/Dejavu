@@ -9,7 +9,7 @@ public class Glove : ItemMoveBase
     void Start()
     {
         Init();
-        if (PlayerDataManager.instance.data.Level1_Progress["Glove"] == "消失" || PlayerDataManager.instance.data.Level1_Progress["Glove"] == "包包")
+        if (PlayerDataManager.instance.data.Level1_Progress["Glove"] == "消失" || PlayerDataManager.instance.data.Level1_Progress["Glove"] == "背包")
         {
             Destroy(this.gameObject);
             return;
@@ -24,6 +24,6 @@ public class Glove : ItemMoveBase
     public override void picking()
     {
         DialogueManager.Instance.StartDialogue("Level1/拿手套1", () => GetItemInfo.ShowGetInfo("Glove", () =>DialogueManager.Instance.StartDialogue("Level1/拿手套2",()=>this.collected = true)));
-        PlayerDataManager.instance.data.Level1_Progress["Glove"] = "包包";
+        PlayerDataManager.instance.data.Level1_Progress["Glove"] = "背包";
     }
 }

@@ -8,7 +8,7 @@ public class Laptop : MonoBehaviour {
 	public Image eel;
 	void Start () {
 		if(PlayerDataManager.instance.data.Level1_Progress["Eel"]=="消失"){
-			eel.gameObject.SetActive(true);
+			eel.color = new Color(255,255,255,255);
 		}
 	}
 	

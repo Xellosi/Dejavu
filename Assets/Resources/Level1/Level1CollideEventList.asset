@@ -20,7 +20,7 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Eel,Dolphin
     FunctionName: 
-  - Objects: Eel,ShellMan
+  - Objects: Eel,SeaShellMan
     FunctionName: 
   - Objects: Eel,Eel
     FunctionName: 
@@ -50,7 +50,7 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Glove,Dolphin
     FunctionName: 
-  - Objects: Glove,ShellMan
+  - Objects: Glove,SeaShellMan
     FunctionName: 
   - Objects: Glove,Eel
     FunctionName: GloveAndEel
@@ -80,7 +80,7 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Leg,Dolphin
     FunctionName: 
-  - Objects: Leg,ShellMan
+  - Objects: Leg,SeaShellMan
     FunctionName: 
   - Objects: Leg,Eel
     FunctionName: 
@@ -110,7 +110,7 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Potion,Dolphin
     FunctionName: 
-  - Objects: Potion,ShellMan
+  - Objects: Potion,SeaShellMan
     FunctionName: 
   - Objects: Potion,Eel
     FunctionName: 
@@ -140,7 +140,7 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Seaweed,Dolphin
     FunctionName: 
-  - Objects: Seaweed,ShellMan
+  - Objects: Seaweed,SeaShellMan
     FunctionName: 
   - Objects: Seaweed,Eel
     FunctionName: 
@@ -170,7 +170,7 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Spoon,Dolphin
     FunctionName: 
-  - Objects: Spoon,ShellMan
+  - Objects: Spoon,SeaShellMan
     FunctionName: 
   - Objects: Spoon,Eel
     FunctionName: 
@@ -200,7 +200,7 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Fruit,Dolphin
     FunctionName: 
-  - Objects: Fruit,ShellMan
+  - Objects: Fruit,SeaShellMan
     FunctionName: 
   - Objects: Fruit,Eel
     FunctionName: 
@@ -229,8 +229,8 @@ MonoBehaviour:
   - Objects: Glass,Tip
     FunctionName: 
   - Objects: Glass,Dolphin
-    FunctionName: 
-  - Objects: Glass,ShellMan
+    FunctionName: GlassAndDolphin
+  - Objects: Glass,SeaShellMan
     FunctionName: 
   - Objects: Glass,Eel
     FunctionName: 
@@ -260,7 +260,7 @@ MonoBehaviour:
     FunctionName: 
   - Objects: Book,Dolphin
     FunctionName: 
-  - Objects: Book,ShellMan
+  - Objects: Book,SeaShellMan
     FunctionName: 
   - Objects: Book,Eel
     FunctionName: 

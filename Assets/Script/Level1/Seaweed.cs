@@ -9,7 +9,7 @@ public class Seaweed : ItemMoveBase
     void Start()
     {
         Init();
-        if (PlayerDataManager.instance.data.Level1_Progress["Seaweed"] == "消失" || PlayerDataManager.instance.data.Level1_Progress["Seaweed"] == "包包")
+        if (PlayerDataManager.instance.data.Level1_Progress["Seaweed"] == "消失" || PlayerDataManager.instance.data.Level1_Progress["Seaweed"] == "背包")
         {
             Destroy(this.gameObject);
             return;
@@ -28,6 +28,6 @@ public class Seaweed : ItemMoveBase
     {
         DialogueManager.Instance.StartDialogue("Level1/拿海藻", () =>GetItemInfo.ShowGetInfo("Seaweed", ()=>{this.collected = true;
         GameManager.Instance.GetComponent<Level1Control>().CheckItemCollection();}));
-        PlayerDataManager.instance.data.Level1_Progress["Seaweed"] = "包包";
+        PlayerDataManager.instance.data.Level1_Progress["Seaweed"] = "背包";
     }
 }
