@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//https://answers.unity.com/questions/890758/how-to-move-an-image-just-in-the-surface-of-the-ca.html
+//TODO 限制滑鼠拖曳範圍
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

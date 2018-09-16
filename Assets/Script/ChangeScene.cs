@@ -7,7 +7,13 @@ using UnityEngine.UI;
 public class ChangeScene : MonoBehaviour {
 
     public static Stack<string> LastSceneStack = new Stack<string>();
-
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>

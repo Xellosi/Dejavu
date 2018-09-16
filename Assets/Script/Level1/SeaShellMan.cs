@@ -16,12 +16,13 @@ public class SeaShellMan : MonoBehaviour {
 	}
 	public void Click(){
 		//已拿取胸部果實
-		if (PlayerDataManager.instance.data.Level1_Progress["Fruit"]=="背包"){
-			DialogueManager.Instance.StartDialogue("Level1/未拿取愛情故事");
+		if (PlayerDataManager.instance.data.Level1_Progress["SeaShellMan"]=="未點擊"){
+			DialogueManager.Instance.StartDialogue("Level1/初次點擊貝殼人");
+			PlayerDataManager.instance.data.Level1_Progress["SeaShellMan"]="已點擊";
 		}
 		//未拿取
-		else{
-
+		else if (PlayerDataManager.instance.data.Level1_Progress["SeaShellMan"]=="已點擊"){
+			DialogueManager.Instance.StartDialogue("Level1/已點擊貝殼人");
 		}
 	}
 }

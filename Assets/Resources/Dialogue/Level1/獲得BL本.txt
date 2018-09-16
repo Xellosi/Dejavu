@@ -1,0 +1,1 @@
+{"name":"","sentence":"秘密","picture1":"","picture2":"","effect1":"震","effect2":"","CG":"","CG_effect":""}

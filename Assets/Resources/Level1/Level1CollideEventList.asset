@@ -261,7 +261,7 @@ MonoBehaviour:
   - Objects: Book,Dolphin
     FunctionName: 
   - Objects: Book,SeaShellMan
-    FunctionName: 
+    FunctionName: BookAndSeaShellMan
   - Objects: Book,Eel
     FunctionName: 
   - Objects: Book,Glove

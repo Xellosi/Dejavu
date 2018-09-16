@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Setting : MonoBehaviour {
+using UnityEngine.SceneManagement;
+public class BLFruit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,7 @@ public class Setting : MonoBehaviour {
 	void Update () {
 		
 	}
-	public void ReturnToGame(){
-		Destroy(transform.root.gameObject);
+	public void click(){
+		DialogueManager.Instance.StartDialogue("Level1/腐女的誕生",()=>SceneManager.LoadScene(0));
 	}
 }

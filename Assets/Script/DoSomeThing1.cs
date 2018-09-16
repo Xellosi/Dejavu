@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using UnityEngine.SceneManagement;
 public class DoSomeThing1 : MonoBehaviour {
 
     DialogueManager a;
     InventoryManager b;
+    public Text d;
    void Start(){
        //DialogueManager.Instance.StartDialogue("test");
        //b=InventoryManager.Instance;
@@ -15,8 +16,9 @@ public class DoSomeThing1 : MonoBehaviour {
 	   //DialogueManager.Instance.StartDialogue("test");
    }
 
-   public void d(){
-       DialogueManager.Instance.StartDialogue("test");
+   public void ShowDialogue(){
+       
+       DialogueManager.Instance.StartDialogue("Level1/"+d.text);
    }
     [SerializeField] GameObject grid = null;
     public void ChangeImagePosition()
@@ -93,6 +95,9 @@ public class DoSomeThing1 : MonoBehaviour {
         change_Image1.transform.localPosition = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(5);
         GameObject.Destroy(go2);
+    }
+    public void ReturnTitle(){
+        SceneManager.LoadScene(0);
     }
 
 }

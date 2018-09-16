@@ -9,8 +9,8 @@ public class Weed : MonoBehaviour {
 	public int count=0;
 	void Start () {
 		if(PlayerDataManager.instance.data.Level1_Progress["Glass"]=="背包" || PlayerDataManager.instance.data.Level1_Progress["Glass"]=="消失"){
-			a.sprite = Resources.Load<Sprite>("Item/Level1/隱藏草 - 開");
-			count=3;
+			//讓下面click無反應
+			count=999;
 		}
 	}
 	
@@ -20,17 +20,21 @@ public class Weed : MonoBehaviour {
 	}
 
 	public void click(){
-		if (count<3)
+		if (count<4)
 		count+=1;
 		if(count==3 & PlayerDataManager.instance.data.Level1_Progress["Glass"]=="未出現"){
 			a.sprite = Resources.Load<Sprite>("Item/Level1/隱藏草 - 開");
+		}
+
+		if(count==4 & PlayerDataManager.instance.data.Level1_Progress["Glass"]=="未出現"){
 			GetItemInfo.ShowGetInfo("Glass",()=>{
-				 PlayerDataManager.instance.data.Level1_Progress["Glass"]="背包";
-				GameObject glass = Instantiate(Resources.Load("Item/Level1/Glass", typeof(GameObject)) as GameObject);
-				glass.transform.SetParent(GameObject.Find("BackGround").transform);
-				glass.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-				glass.name = "Glass";
-				glass.GetComponent<Glass>().PutInBag();
+			a.sprite = Resources.Load<Sprite>("Item/Level1/隱藏草");
+			PlayerDataManager.instance.data.Level1_Progress["Glass"]="背包";
+			GameObject glass = Instantiate(Resources.Load("Item/Level1/Glass", typeof(GameObject)) as GameObject);
+			glass.transform.SetParent(GameObject.Find("BackGround").transform);
+			glass.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+			glass.name = "Glass";
+			glass.GetComponent<Glass>().PutInBag();
 			});
 		}
 	}
