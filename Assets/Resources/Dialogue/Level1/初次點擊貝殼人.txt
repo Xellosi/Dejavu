@@ -1,1 +1,1 @@
-{"name":"","sentence":"你聽過幾次小美人魚的故事?聽過幾百次都膩了，是不是應該考慮換個故事主角啊?","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"","sentence":"你聽過幾次小美人魚的故事?聽過幾百次都膩了，是不是應該考慮換個故事主角啊?","picture1":"","picture2":"","effect1":"","effect2":"","CG":"筆電","CG_effect":""}

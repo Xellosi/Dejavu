@@ -232,8 +232,7 @@ public class Level1Control : ControlBase
             GetItemInfo.ShowGetInfo("Fruit", () =>
             {
                 PlayerDataManager.instance.data.Level1_Progress["Book"] = "消失";
-                DialogueManager.Instance.StartDialogue("Level1/拿取果實");
-                GameObject.Find("Level1End").transform.GetChild(0).gameObject.SetActive(true);
+                DialogueManager.Instance.StartDialogue("Level1/拿取果實",()=>GameObject.Find("Level1End").transform.GetChild(0).gameObject.SetActive(true));
             });
         });
     }

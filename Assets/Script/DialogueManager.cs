@@ -207,7 +207,7 @@ public class DialogueManager : MonoBehaviour
 		if (currentDialogue.CG != "") {
 			CG.transform.gameObject.SetActive(true);
 			if(!imagepool.ContainsKey(currentDialogue.CG)){
-				imagepool[currentDialogue.CG]=Resources.Load<Sprite>(Path.Combine("Character/",currentDialogue.CG));
+				imagepool[currentDialogue.CG]=Resources.Load<Sprite>(Path.Combine("Character/CG/",currentDialogue.CG));
 			}
 			CG.sprite=imagepool[currentDialogue.CG];
 		}
