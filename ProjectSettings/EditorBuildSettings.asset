@@ -9,17 +9,18 @@ EditorBuildSettings:
     path: Assets/Title.unity
     guid: df9c4c89ddf476c469cdbccaaa57ec0c
   - enabled: 1
-    path: Assets/intro.unity
+    path: Assets/Scene/Level1/intro.unity
     guid: 51e52df32879b2b42a47ccdf63866568
   - enabled: 1
-    path: Assets/1-1Leftside.unity
+    path: Assets/Scene/Level1/1-1Leftside.unity
     guid: a2d6113174879224db9b8d28ddedcf93
   - enabled: 1
-    path: Assets/1-1Rightside.unity
+    path: Assets/Scene/Level1/1-1Rightside.unity
     guid: 25f6884c4807ef443aa661749c098127
   - enabled: 1
-    path: Assets/1-2Leftside.unity
+    path: Assets/Scene/Level1/1-2Leftside.unity
     guid: 843f2bc1390400e4594806317cca483e
   - enabled: 1
-    path: Assets/1-2Rightside.unity
+    path: Assets/Scene/Level1/1-2Rightside.unity
     guid: 8ac48208579de3048964a3acda6e8844
+  m_configObjects: {}
