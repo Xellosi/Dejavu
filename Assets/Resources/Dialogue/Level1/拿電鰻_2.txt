@@ -1,1 +1,3 @@
-{"name":"波絲","sentence":"幾個月前才種現在長得真快阿……","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":"湯匙原來在這裡??!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"ZZZZZZZ…","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"這傢伙的睡覺舒適度真令人佩服阿……","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}

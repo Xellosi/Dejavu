@@ -1,1 +1,6 @@
-{"name":"波絲","sentence":"幾個月前才種現在長得真快阿……","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"伊悠","sentence":"你喝過了吸收藥水的話，直接吃下應該就可以了。","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"恩恩。","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"","sentence":"【波絲將果實吃下後，波絲的胸部慢慢開始變大了】","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"真的有見效耶!","picture1":"章魚立繪-胸部","picture2":"電鰻伊悠","effect1":"震","effect2":"暗","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"恩….是阿……","picture1":"章魚立繪-胸部","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"我們還是趕緊找下一個吧!","picture1":"章魚立繪-胸部","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"","CG_effect":""}

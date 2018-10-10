@@ -1,1 +1,1 @@
-{"name":"","sentence":"(我想等等他起床又要臭臉了….汗)","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":" (等等他起床，一定又會臭臉了….汗)","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}

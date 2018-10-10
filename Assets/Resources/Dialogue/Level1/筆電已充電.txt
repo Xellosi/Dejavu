@@ -1,0 +1,1 @@
+﻿{"name":"波絲","sentence":"有電真好!但我現在沒有很想用的意思，趕快製藥去!","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}

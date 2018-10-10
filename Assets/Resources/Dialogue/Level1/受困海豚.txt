@@ -1,1 +1,6 @@
-{"name":"","sentence":"你聽過幾次小美人魚的故事?聽過幾百次都膩了，是不是應該考慮換個故事主角啊?","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"海豚","sentence":"嗚……..嗚…….【悲鳴痛苦聲】","picture1":"","picture2":"海豚(關)","effect1":"","effect2":"震","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"伊悠，你看那隻海豚，他是不是遇上麻煩了?","picture1":"波絲","picture2":"海豚(關)","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"去看一眼吧!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"","sentence":"【上前查看後的兩人】","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"暗","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"他被網子纏住了!有沒有尖銳的東西可以把網子割掉?","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"一看就知道我身上沒有吧!找看看附近吧【有些無奈】","picture1":"波絲","picture2":"電鰻伊悠"","effect1":"暗","effect2":"","CG":"","CG_effect":""}

@@ -1,1 +1,1 @@
-{"name":"波絲","sentence":"得找到充電器才行，不然材料就難買了…","picture1":"波絲","picture2":"","effect1":"震","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":"做好了!那位客人應該等很久了吧….(有些擔心的自言自語道)","picture1":"波絲","picture2":"","effect1":"震","effect2":"","CG":"","CG_effect":""}

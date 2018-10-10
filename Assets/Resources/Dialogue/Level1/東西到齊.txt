@@ -1,1 +1,1 @@
-{"name":"","sentence":"秘密","picture1":"","picture2":"","effect1":"震","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":"都找齊了!快點製藥去，別讓客人久等了","picture1":"波絲","picture2":"","effect1":"震","effect2":"","CG":"","CG_effect":""}

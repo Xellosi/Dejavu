@@ -1,1 +1,5 @@
-{"name":"波絲","sentence":"怎麼半….都找不到充電器…伊悠?","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"","sentence":"換上了愛麗聲音的波絲和伊悠兩人帶著”變美”的配方尋找下一個物品-胸部果實】","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"新聲音感覺如何?","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"覺得還好，但感覺有些不習慣……","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"慢慢就會習慣了!【深深覺得違和感重】","picture1":"波絲","picture2":電鰻伊悠"","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"總之找配方材料吧!","picture1":"波絲","picture2":電鰻伊悠"","effect1":"暗","effect2":"","CG":"","CG_effect":""}

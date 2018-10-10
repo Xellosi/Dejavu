@@ -172,7 +172,7 @@ public class DialogueManager : MonoBehaviour
 					char1.color=Color.gray;
 				}
 				else if(currentDialogue.effect1=="震"){
-					char1.gameObject.transform.DOShakePosition(1f,new Vector2(0,200),randomness:0);
+					char1.gameObject.transform.DOShakePosition(1f,new Vector2(0,150),randomness:0);
 				}
 			}
 			else{
@@ -193,7 +193,7 @@ public class DialogueManager : MonoBehaviour
 					char2.color=Color.gray;
 				}
 				else if(currentDialogue.effect2=="震"){
-					char2.gameObject.transform.DOShakePosition(1f,new Vector2(0,200),randomness:0);
+					char2.gameObject.transform.DOShakePosition(1f,new Vector2(0,150),randomness:0);
 				}
 			}
 			else{

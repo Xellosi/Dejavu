@@ -1,1 +1,4 @@
-{"name":"波絲","sentence":"幾個月前才種現在長得真快阿……","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":"這樣就可以了吧!好…….(小聲且有些害怕)","picture1":"波絲","picture2":"","effect1":"震","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"【輕輕地抱起伊悠】","picture1":"波絲","picture2":"","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"ZZZZZZZZZ....","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"太好了!(小聲)","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}

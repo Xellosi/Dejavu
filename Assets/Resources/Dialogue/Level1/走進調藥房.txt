@@ -1,1 +1,5 @@
-{"name":"波絲","sentence":"看來還是得找個東西來抱起才行。","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":"製作方法應該在桌上，先去網上買材料準備準備吧!","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"","sentence":"波絲打開筆電後，發現筆電毫無反應","picture1":"波絲","picture2":"","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"嗯?怎麼沒反應?","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"該不會沒電了吧…..","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"充電器我好像放在房裡的哪一處?找找吧!","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}

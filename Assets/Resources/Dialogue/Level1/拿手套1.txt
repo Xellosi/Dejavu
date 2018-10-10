@@ -1,1 +1,1 @@
-{"name":"波絲","sentence":"這個應該可以抱起伊悠了","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":"這個應該可以抱起伊悠了!","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}

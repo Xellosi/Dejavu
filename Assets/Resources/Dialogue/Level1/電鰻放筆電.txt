@@ -1,1 +1,13 @@
-{"name":"","sentence":"海藻門簾被一個身影給推開了，一隻美人魚游了進來","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"伊悠","sentence":"甚麼??????!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"抱歉了..伊悠!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"震","effect2":"暗","CG":"","CG_effect":""}
+{"name":"","sentence":"【波絲將伊悠插在筆電後，原本螢幕一片黑的筆電馬上出現了網路購物的葉面單畫面。購物單上有四樣材料，青蛙腿剩一件，其餘已售完】","picture1":"","picture2":"","effect1":"","effect2":"","CG":"筆電","CG_effect":""}
+{"name":"波絲","sentence":"剩下一件?!賣的也太快了吧?","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"筆電","CG_effect":"暗"}
+{"name":"波絲","sentence":"還好盡早發現，不然就沒貨了…","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"筆電","CG_effect":""}
+{"name":"","sentence":"【購買完沒多久，後門出現敲門聲】","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"送貨員","sentence":"你好!這裡是鰹魚宅急便!請問莉蘇小姐在嗎?","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"喔喔來了~(輕聲呼叫)","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"","sentence":"【過沒多久，莉蘇帶著貨回到調藥房】","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"好有效率的宅配公司啊…","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"晚點再去給5星評價，現在先處理客人的藥水為優先。","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":".........","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
+

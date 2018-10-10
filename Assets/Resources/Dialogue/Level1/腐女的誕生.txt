@@ -1,1 +1,7 @@
-{"name":"波絲","sentence":"幾個月前才種現在長得真快阿……","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":"這大概就是了吧，看起來很眼熟。","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"不!等等!別亂吃!!!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"那是BL研究會的精英腐女研發的BL果實啊！","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"恩?!【驚嚇到把果子咬下一口，聽到後趕緊把果肉吐掉，但少許的果汁卻阻止不及喝進了些】","picture1":"波絲","picture2":"電鰻伊悠","effect1":"震","effect2":"暗","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"奇怪?頭怎麼昏昏的，還出現了奇怪的畫面......","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"","sentence":"【無畫面呈現，請玩家自行斟酌想像】(注：腐女是喜愛boys love的女性稱呼)","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"暗","CG":"","CG_effect":""}
+{"name":"","sentence":"【BED1:腐女的誕生】","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}

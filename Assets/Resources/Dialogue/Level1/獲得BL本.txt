@@ -1,1 +1,7 @@
-{"name":"","sentence":"秘密","picture1":"","picture2":"","effect1":"震","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"","sentence":"【海豚游出碎網後，拿出了一樣東西給了波絲】","picture1":"波絲","picture2":"海豚","effect1":"暗","effect2":"暗","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"這是..BL愛情故事本?","picture1":"波絲","picture2":"海豚","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"","sentence":"【海豚點了一下頭後，便游走了。】","picture1":"波絲","picture2":"海豚","effect1":"暗","effect2":"暗","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"居然在這個時候，親身救到了知名的作者本人阿!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"你怎麼知道他很有名啊?","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"看書跟聽說的….ㄟ等等!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"先說，我只聽過名字，並不代表我看過他出版的書喔!!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"震","CG":"","CG_effect":""}

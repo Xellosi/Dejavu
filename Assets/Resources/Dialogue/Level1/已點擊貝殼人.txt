@@ -1,1 +1,3 @@
-{"name":"波絲","sentence":"幾個月前才種現在長得真快阿……","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"貝殼人","sentence":"拿到愛情故事(省略BL)了嗎?","picture1":"波絲","picture2":"貝殼人","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"還沒ㄟ..","picture1":"波絲","picture2":"貝殼人","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"貝殼人","sentence":"那你得加緊速度啊!免得下一個客人來買的話，果實就沒有拉!【催促著口氣】","picture1":"波絲","picture2":"貝殼人","effect1":"暗","effect2":"","CG":"","CG_effect":""}

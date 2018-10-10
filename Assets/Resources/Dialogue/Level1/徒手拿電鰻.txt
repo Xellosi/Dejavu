@@ -1,1 +1,5 @@
-{"name":"波絲","sentence":"怎麼半….都找不到充電器…伊悠?","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":"怎麼半….都找不到充電器…","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"伊悠","sentence":"ZZZZZZZ….","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"伊悠?","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"【波絲手剛伸過去時，伊悠身上產生了少數電流，讓波絲感到一些麻木感】","picture1":"波絲","picture2":"電鰻伊悠","effect1":"震","effect2":"暗","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"看來還是得找個東西來抱起才行!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}

@@ -1,1 +1,9 @@
-{"name":"","sentence":"你聽過幾次小美人魚的故事?聽過幾百次都膩了，是不是應該考慮換個故事主角啊?","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"旁白","sentence":"你聽過幾次小美人魚的故事?","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"旁白","sentence":"聽過幾百次都膩了，是不是應該考慮換個故事主角啊?","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"旁白","sentence":"小美人魚的故事人物又不是只有美人魚公主而已，好歹也有國王、皇后、人魚公主的姊姊們和女巫.......","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"旁白","sentence":"但…反派真的會是大家眼裡的大壞蛋嗎?","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"旁白","sentence":"在一個不起眼、只有暗黑的海帶來作伴荒涼之地，那裏有間圓屋頂的老舊雜貨店","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"旁白","sentence":"而屋主則是一名醜陋至極的章魚老巫婆-波絲和一隻夥伴電鰻-伊悠","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"旁白","sentence":"波絲有要藥師等級證照，但因為只有乙級程度，在藥師職業圈只能算實習藥師程度不被中用。","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"旁白","sentence":"所以他們暫時以研製巫術、以及調配藥水作為生活經濟來源。","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"旁白","sentence":"直到一日，一個特別的客人來訪...","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}

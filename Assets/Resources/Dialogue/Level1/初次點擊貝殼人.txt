@@ -1,1 +1,12 @@
-{"name":"","sentence":"你聽過幾次小美人魚的故事?聽過幾百次都膩了，是不是應該考慮換個故事主角啊?","picture1":"","picture2":"","effect1":"","effect2":"","CG":"筆電","CG_effect":""}
+﻿{"name":"波絲","sentence":"找到了!果實在那邊!!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"筆電","CG_effect":""}
+{"name":"伊悠","sentence":"那去拿吧!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"筆電","CG_effect":""}
+{"name":"","sentence":【走向貝殼人】","picture1":"","picture2":"","effect1":"","effect2":"","CG":"筆電","CG_effect":""}
+{"name":"貝殼人","sentence":"呦呦!客人，歡迎看看!","picture1":"貝殼人","picture2":"波絲","effect1":"震","effect2":"暗","CG":"筆電","CG_effect":""}
+{"name":"波絲","sentence":"那個……不好意思….請問那個果實多少海幣?","picture1":"貝殼人","picture2":"波絲","effect1":"暗","effect2":"","CG":"筆電","CG_effect":""}
+{"name":"貝殼人","sentence":"阿~不用錢!【豪邁的口氣】","picture1":"貝殼人","picture2":"波絲","effect1":"","effect2":"暗","CG":"筆電","CG_effect":""}
+{"name":"貝殼人","sentence":"只要用以物換物就可以了!如果你有那個的話，我就跟你交換。","picture1":"貝殼人","picture2":"波絲","effect1":"","effect2":"暗","CG":"筆電","CG_effect":""}
+{"name":"波絲","sentence":"真的嗎?那要用甚麼物品可以跟你交換?","picture1":"貝殼人","picture2":"波絲","effect1":"暗","effect2":"","CG":"筆電","CG_effect":""}
+{"name":"貝殼人","sentence":"我想要…..【小聲的告訴波絲和伊悠】","picture1":"貝殼人","picture2":"波絲","effect1":"","effect2":"暗","CG":"筆電","CG_effect":""}
+{"name":"貝殼人","sentence":"男男的愛情故事的那種….","picture1":"貝殼人","picture2":"波絲","effect1":"","effect2":"暗","CG":"筆電","CG_effect":""}
+{"name":"伊悠","sentence":"那是BL阿!","picture1":"貝殼人","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"筆電","CG_effect":""}
+{"name":貝殼人"","sentence":"噓!!!!!【驚慌失措的制止】別講那麼大聲啊!!","picture1":"貝殼人","picture2":"電鰻伊悠","effect1":"震","effect2":"暗","CG":"筆電","CG_effect":""}

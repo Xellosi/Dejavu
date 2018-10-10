@@ -1,1 +1,11 @@
-{"name":"","sentence":"海藻門簾被一個身影給推開了，一隻美人魚游了進來","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"","sentence":"海藻門簾被一個身影給推開了，一隻美人魚游了進來","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"歡迎光臨!請問你需要什麼?","picture1":"波絲","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"???","sentence":"這地方又舊又小……真的能製那個藥嗎?(張望著店裡老舊窄小的環境，不禁小聲低噥著)","picture1":"波絲","picture2":"遮臉愛麗公主","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"請問…能為您服務些什麼?","picture1":"波絲","picture2":"遮臉愛麗公主","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"???","sentence":"嗯?","picture1":"波絲","picture2":"遮臉愛麗公主","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"???","sentence":"喔!抱歉我剛沒聽到你說話，請問你們會調製(變成人類)的藥嗎?","picture1":"波絲","picture2":"遮臉愛麗公主","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"變成…..人類的藥(對於客人的要求感到疑惑)","picture1":"","picture2":"遮臉愛麗公主","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"???","sentence":"是啊!就是可以變成像陸地上的人類一樣兩條腿走路的那種!(興奮不已)只是一直找不到會做那種藥的商人，你們….能做嗎?","picture1":"波絲","picture2":"遮臉愛麗公主","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
+{"name":"???","sentence":"只是一直找不到會做那種藥的商人，你們能做嗎?","picture1":"波絲","picture2":"遮臉愛麗公主","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"我知道製作方法。","picture1":"波絲","picture2":"遮臉愛麗公主","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"波絲","sentence":"請稍等，我馬上製作給你!","picture1":"波絲","picture2":"遮臉愛麗公主","effect1":"","effect2":"暗","CG":"","CG_effect":""}
