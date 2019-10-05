@@ -2,4 +2,3 @@
 {"name":"貝殼人","sentence":"喔!!!!!!!!!!!!!!!!!!!!!!!!!","picture1":"","picture2":"","effect1":"","effect2":"","CG":"老闆拿到BL本","CG_effect":""}
 {"name":"貝殼人","sentence":"太好了謝謝你啦!!!!這是你的果實，謝謝光臨!","picture1":"波絲","picture2":"貝殼人","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
 {"name":"波絲","sentence":"謝謝老闆!","picture1":"波絲","picture2":"貝殼人","effect1":"","effect2":"暗","CG":"","CG_effect":""}
-

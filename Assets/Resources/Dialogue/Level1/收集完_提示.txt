@@ -1,1 +1,2 @@
-{"name":"波絲","sentence":"幾個月前才種現在長得真快阿……","picture1":"","picture2":"","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"","sentence":"步驟一:特殊海藻放入鍋子煮，隨後湯匙攪拌","picture1":"","picture2":"","effect1":"","effect2":"","CG":"提示紙","CG_effect":""}
+{"name":"","sentence":"步驟二:加入蛙腿用湯匙拌煮-完成","picture1":"","picture2":"","effect1":"","effect2":"","CG":"提示紙","CG_effect":""}
