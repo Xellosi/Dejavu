@@ -1,2 +1,2 @@
-﻿{"name":"波絲","sentence":"成功啦!你自由拉","picture1":"波絲","picture2":"海豚(關)","effect1":"","effect2":暗","CG":"","CG_effect":""}
-{"name":"海豚","sentence":"","picture2":"海豚","effect1":"暗","effect2":"","CG":"","CG_effect":""}
+﻿{"name":"波絲","sentence":"成功啦!你自由拉","picture1":"波絲","picture2":"海豚(關)","effect1":"","effect2":"暗","CG":"","CG_effect":""}
+{"name":"海豚","sentence":"","picture1":"","picture2":"海豚","effect1":"暗","effect2":"","CG":"","CG_effect":""}

@@ -10,4 +10,3 @@
 {"name":"波絲","sentence":"好有效率的宅配公司啊…","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
 {"name":"波絲","sentence":"晚點再去給5星評價，現在先處理客人的藥水為優先。","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
 {"name":"伊悠","sentence":".........","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
-

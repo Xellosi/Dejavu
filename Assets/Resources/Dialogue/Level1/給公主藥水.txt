@@ -46,6 +46,6 @@
 {"name":"","sentence":"【伊悠默默將一張紙遞給了她，波絲看了內容後感到疑問】","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"","CG":"","CG_effect":""}
 {"name":"波絲","sentence":"這張是…..?變美的方法","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}
 {"name":"伊悠","sentence":"昨晚去書店翻書時找到的……我猜對你可能會有幫助，直接撕下來給你吧!","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"","CG":"","CG_effect":""}
-{"name":"","sentence":【伊悠見波絲的表情彷彿是看著闖禍的小孩似看著自己】","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"","CG":"","CG_effect":""}
+{"name":"","sentence":"【伊悠見波絲的表情彷彿是看著闖禍的小孩似看著自己】","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"","CG":"","CG_effect":""}
 {"name":"伊悠","sentence":"幹嘛??!我花錢買的撕下來的，難道要我用抄的來為難我自己?","picture1":"波絲","picture2":"電鰻伊悠","effect1":"暗","effect2":"震","CG":"","CG_effect":""}
 {"name":"波絲","sentence":"哦………","picture1":"波絲","picture2":"電鰻伊悠","effect1":"","effect2":"暗","CG":"","CG_effect":""}

@@ -54,12 +54,14 @@ public class DialogueManager : MonoBehaviour
 		//https://answers.unity.com/questions/1411034/textasset-return-null.html
 		TextAsset  DialogueText = (TextAsset) Resources.Load(fileFullPath,typeof (TextAsset));
 		Debug.Log(DialogueText);
+		int count =0;
 		foreach(string s in DialogueText.text.Split('\n')){
 			try {
 				_Dialogue.Enqueue(JsonUtility.FromJson<Dialogue>(s));
+				count+=1;
 			}
 			catch (Exception e) {
-				Debug.Log(e.Message);
+				Debug.Log(e.Message+","+fileFullPath+','+count.ToString());
 				return;
 			}
 		}
@@ -99,12 +101,14 @@ public class DialogueManager : MonoBehaviour
 		//https://answers.unity.com/questions/1411034/textasset-return-null.html
 		TextAsset  DialogueText = (TextAsset) Resources.Load(fileFullPath,typeof (TextAsset));
 		Debug.Log(dialoguename+","+DialogueText);
+		int count = 0;
 		foreach(string s in DialogueText.text.Split('\n')){
 			try {
 				_Dialogue.Enqueue(JsonUtility.FromJson<Dialogue>(s));
+				count +=1;
 			}
 			catch (Exception e) {
-				Debug.Log(e.Message);
+				Debug.Log(e.Message+','+fileFullPath+','+count.ToString());
 				return;
 			}
 		}
